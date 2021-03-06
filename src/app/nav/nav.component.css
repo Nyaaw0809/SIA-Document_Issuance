@@ -1,0 +1,124 @@
+.blue-color {
+  background-color: #3b8beb;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.barangay-logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #404040;
+}
+
+mat-sidenav-container,
+mat-sidenav-content {
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+mat-sidenav {
+  padding: 16px;
+  background-color: whitesmoke;
+  color: #404040;
+}
+
+mat-sidenav {
+  width: 225px;
+}
+
+mat-card {
+  background-color: white;
+  color: #404040;
+}
+
+mat-card-content {
+  font-size: 18px;
+  margin-top: 13px;
+}
+
+.residents-card {
+  width: 250px;
+  padding: 25px;
+}
+
+.dashboardcontent {
+  padding: 35px;
+}
+
+.sidenavbar {
+  height: 100%;
+}
+
+.sidebarcontent {
+  width: 100%;
+  padding: 8px;
+}
+
+.sidenav {
+  border-right: 0.75px solid lightgrey;
+}
+
+.resprofheader {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+.agegroupchartcard {
+  width: 600px;
+  margin-left: 20px;
+  padding: 20px;
+}
+
+.firstflex {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.residentsicon {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+}
+
+.chart-wrapper {
+  margin-top: 20px;
+}
+
+.histopopulationchart {
+  width: 870px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+/* .residentsmessage {
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 16px;
+} */
