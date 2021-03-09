@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { BrgyClearanceComponent } from './brgy-clearance/brgy-clearance.component';
-import { BusinessPermitComponent } from './business-permit/business-permit.component';
 import { IndigencyComponent } from './indigency/indigency.component';
 import { ResidencyCertComponent } from './residency-cert/residency-cert.component';
 const routes: Routes = [
@@ -21,11 +20,6 @@ const routes: Routes = [
   {
     path: 'brgy-clearance',
     component: BrgyClearanceComponent
-  }
-  ,
-  {
-    path: 'business-permit',
-    component: BusinessPermitComponent
   }
   ,
   {

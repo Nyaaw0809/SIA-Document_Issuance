@@ -23,7 +23,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BusinessPermitComponent } from './business-permit/business-permit.component';
 import { IndigencyComponent } from './indigency/indigency.component';
 import { ResidencyCertComponent } from './residency-cert/residency-cert.component';
 
@@ -34,7 +33,6 @@ import { ResidencyCertComponent } from './residency-cert/residency-cert.componen
     HomeComponent,
     NavComponent,
     BrgyClearanceComponent,
-    BusinessPermitComponent,
     IndigencyComponent,
     ResidencyCertComponent
   ],

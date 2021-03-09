@@ -1,3 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav {
+    background-color: #fffafa;
+    width: 250px;
+}
+.main-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #eeeeee;
+}
+.mat-sidenav {
+    padding: 0;
+}
+.spacer {
+    flex: 1 1 auto;
+}
+.mat-toolbar {
+    background-color: #fffafa;
+}
+mat-nav-list {
+    margin-top: 50px;
+}
+.pointer {
+    cursor: pointer;
+}
+.mat-icon {
+    color: rgba(0, 0, 0, 0.54);
+}
+.side-nav-title {
+    margin-left: 20px;
+    font-size: 18px;
+}
+.mat-list-item {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.87);
+    text-align: left;
+    margin-left: 0px;
+    padding-left: 16;
+    font-family: "Montserrat", sans-serif;
+}
+.mat-list-item:hover {
+    font-weight: bold;
+    background-color: #4dd0e1;
+}
+.logo-nav {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.icon-name {
+    font-family: "Poppins", sans-serif;
+    margin-left: 40px;
+}
+
+
+.blue-color {
+  background-color: #3b8beb;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  overflow: hidden;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+  float: right;
+}
+.poppins1 {
+  font-family: "Poppins", sans-serif;
+  float: left;
+}
+
+h1 {
+  margin-left: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+h3 {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: -5px;
+}
+
+p {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #404040;
+}
+
+mat-sidenav-container,
+mat-sidenav-content {
+  height: 100%;
+  background-color: #eef5f9;
+}
+
+mat-sidenav {
+  background-color: rgb(255, 255, 255);
+  color: #404040;
+  font-family: "Poppins", sans-serif;
+  width: 225px;
+  border-right: 0.75px solid lightgrey;
+}
+
+mat-card {
+  overflow: auto;
+}
+
+mat-card-title {
+  float: right;
+}
+
+.sidenavbar {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+.sidebarcontent {
+  width: 91%;
+  padding: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.sidenavBtn {
+  margin-left: -20px;
+  margin-right: 5px;
+}
+
+.selected {
+  background-color: #4da8da;
+  color: #ffffff;
+}
+
+.resprofheader {
+  margin-top: 20px;
+}
+
+.user-profile {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.dashboardCard {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.dashboardSecondCard {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.patients-card {
+  width: 380px;
+  height: 150px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 25px;
+}
+.patients-card1 {
+  width: 380px;
+  height: 150px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 25px;
+}
+
+.chart-card {
+  width: 790px;
+  height: 500px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 25px;
+  background-color: #eef5f9;
+}
+.chart-card1 {
+  width: 600px;
+  height: 200px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 20px;
+  display: flex;
+  margin-top: 55px;
+  background-color: #eef5f9;
+}
+mat-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+.ptitle {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 690px;
+  font-size: 25px;
+}
+
 .full-width {
   width: 100%;
 }
@@ -24,4 +256,20 @@
 
 .col:last-child {
   margin-right: 0;
+}
+
+
+.poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.poppins-bold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #404040;
+}
+
+
+.zontaline {
+    border-bottom: 1px solid gray;
 }
