@@ -5,10 +5,11 @@ import { NavComponent } from './nav/nav.component';
 import { BrgyClearanceComponent } from './brgy-clearance/brgy-clearance.component';
 import { IndigencyComponent } from './indigency/indigency.component';
 import { ResidencyCertComponent } from './residency-cert/residency-cert.component';
+import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },{
     path: 'home',
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'residency',
     component: ResidencyCertComponent
+  } ,
+  {
+    path: 'login',
+    component: LoginComponent
   }
 ];
 

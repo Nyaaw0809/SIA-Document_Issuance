@@ -25,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IndigencyComponent } from './indigency/indigency.component';
 import { ResidencyCertComponent } from './residency-cert/residency-cert.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ResidencyCertComponent } from './residency-cert/residency-cert.componen
     NavComponent,
     BrgyClearanceComponent,
     IndigencyComponent,
-    ResidencyCertComponent
+    ResidencyCertComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

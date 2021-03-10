@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
+import { Router } from '@angular/router';
+import { MatSidenav } from '@angular/material/sidenav';
 import {MatTableDataSource} from '@angular/material/table';
 export interface Records {
   name: string;
@@ -34,11 +36,46 @@ export class HomeComponent {
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
 
+  sidenav: MatSidenav;
+  isExpanded = true;
+  showSubmenu: boolean = false;
+  isShowing = false;
+  showSubSubMenu: boolean = false;
+
+  mouseenter() {
+    if (!this.isExpanded) {
+      this.isShowing = true;
+    }
+  }
+
+  mouseleave() {
+    if (!this.isExpanded) {
+      this.isShowing = false;
+    }
+  }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, public router : Router) {}
+
+
+
+  isSidebarOpen=true;
+
+  openSidebar() {
+    this.isSidebarOpen = true;
+  }
+  closeSidebar() {
+    this.isSidebarOpen = false;
+  }
+
+
+  logout(){
+    this.router.navigate(["/barangay-management-system/login"]);
+  }
+
 }

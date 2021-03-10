@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
+import { Router } from '@angular/router';
+import { MatSidenav } from '@angular/material/sidenav';
 @Component({
   selector: 'app-residency-cert',
   templateUrl: './residency-cert.component.html',
@@ -78,8 +80,38 @@ export class ResidencyCertComponent {
     {name: 'Wyoming', abbreviation: 'WY'}
   ];
 
-  constructor(private fb: FormBuilder) {}
+  sidenav: MatSidenav;
+  isExpanded = true;
+  showSubmenu: boolean = false;
+  isShowing = false;
+  showSubSubMenu: boolean = false;
 
+  mouseenter() {
+    if (!this.isExpanded) {
+      this.isShowing = true;
+    }
+  }
+
+  mouseleave() {
+    if (!this.isExpanded) {
+      this.isShowing = false;
+    }
+  }
+  constructor(private fb: FormBuilder,public router : Router) {}
+
+  isSidebarOpen=true;
+
+  openSidebar() {
+    this.isSidebarOpen = true;
+  }
+  closeSidebar() {
+    this.isSidebarOpen = false;
+  }
+
+
+  logout(){
+    this.router.navigate(["/barangay-management-system/login"]);
+  }
   onSubmit() {
     alert('Thanks!');
   }

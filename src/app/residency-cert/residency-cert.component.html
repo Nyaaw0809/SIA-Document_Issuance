@@ -1,4 +1,37 @@
 
+<div class="sidenavbar">
+  <!-- NAVBAR -->
+  <!-- SIDENAV -->
+  <mat-sidenav-container autosize>
+
+      <mat-sidenav #drawer mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+              <img class="user-profile" src="/assets/avatar1.png">
+              <h2 style="color: #020101">ADMIN</h2>
+              <mat-divider [vertical]="false"></mat-divider>
+          <button mat-button class="sidebarcontent" routerLink="/home" routerLinkActive="selected"><mat-icon style="margin-left: -38px; margin-right: 5px;" class="sidenavBtn">dashboard</mat-icon> Dashboard</button><br>
+
+          <h3 style="color: #020101">Documents</h3>
+              <mat-divider [vertical]="false"></mat-divider>
+          <button mat-button class="sidebarcontent" routerLink="/brgy-clearance" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Barangay Clearance</button><br>
+          <button mat-button class="sidebarcontent" routerLink="/indigency" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Certificate of Indigency</button><br>
+          <button mat-button class="sidebarcontent"  routerLink="/residency" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Certificate of Residency</button><br>
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+
+          <div class="navbar">
+              <mat-toolbar class="blue-color">
+                <button mat-icon-button class="example-icon" (click)="isExpanded = !isExpanded" aria-label="Example icon-button with menu icon" mat-button (click)="drawer.toggle()">
+                  <mat-icon>menu</mat-icon>
+                </button>
+                <h1 style="color: #ffffff">Document Issuance</h1>
+
+                <span class="example-spacer"></span>
+                <button mat-icon-button (click)="logout()" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                  <mat-icon>logout</mat-icon>
+                </button>
+              </mat-toolbar>
+          </div>
             <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
               <mat-card style="width: 90%;" class="shipping-card">
                 <h1 class="poppins-bold">Name</h1>
@@ -54,3 +87,6 @@
                 </mat-card-actions>
               </mat-card>
             </form>
+
+          </mat-sidenav-content>
+        </mat-sidenav-container>
