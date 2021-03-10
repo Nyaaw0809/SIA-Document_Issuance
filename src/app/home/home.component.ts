@@ -75,7 +75,7 @@ export class HomeComponent {
 
 
   logout(){
-    this.router.navigate(["/barangay-management-system/login"]);
+    this.router.navigate(["/login"]);
   }
 
 }

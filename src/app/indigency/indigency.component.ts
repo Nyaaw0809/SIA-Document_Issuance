@@ -113,7 +113,7 @@ export class IndigencyComponent {
 
 
   logout(){
-    this.router.navigate(["/barangay-management-system/login"]);
+    this.router.navigate(["/login"]);
   }
   onSubmit() {
     alert('Thanks!');
