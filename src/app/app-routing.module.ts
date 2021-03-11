@@ -6,6 +6,7 @@ import { BrgyClearanceComponent } from './brgy-clearance/brgy-clearance.componen
 import { IndigencyComponent } from './indigency/indigency.component';
 import { ResidencyCertComponent } from './residency-cert/residency-cert.component';
 import { LoginComponent } from './login/login.component';
+import { BarangayClearancePdfComponent } from './barangay-clearance-pdf/barangay-clearance-pdf.component';
 const routes: Routes = [
   {
     path: '',
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'brgyclearanceView',
+    component: BarangayClearancePdfComponent
   }
 ];
 

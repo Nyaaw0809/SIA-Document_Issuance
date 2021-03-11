@@ -26,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { IndigencyComponent } from './indigency/indigency.component';
 import { ResidencyCertComponent } from './residency-cert/residency-cert.component';
 import { LoginComponent } from './login/login.component';
+import { BarangayClearancePdfComponent } from './barangay-clearance-pdf/barangay-clearance-pdf.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { LoginComponent } from './login/login.component';
     BrgyClearanceComponent,
     IndigencyComponent,
     ResidencyCertComponent,
-    LoginComponent
+    LoginComponent,
+    BarangayClearancePdfComponent
   ],
   imports: [
     BrowserModule,
