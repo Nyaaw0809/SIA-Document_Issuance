@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit ,Inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -7,19 +7,45 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSidenav } from '@angular/material/sidenav';
 
+import { DocumentService } from '../document.service';
+import { ResidentRecord } from '../resident-record';
+
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { BarangayClearancePdfComponent } from '../barangay-clearance-pdf/barangay-clearance-pdf.component';
+
+
 @Component({
   selector: 'app-brgy-clearance',
   templateUrl: './brgy-clearance.component.html',
   styleUrls: ['./brgy-clearance.component.css']
 })
 export class BrgyClearanceComponent {
-  addressForm = this.fb.group({
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    midName: [null, Validators.required],
-    address: [null, Validators.required],
-    purpose: [null, Validators.required]
-  });
+  // addressForm = this.fb.group({
+  //   firstName: [null, Validators.required],
+  //   lastName: [null, Validators.required],
+  //   midName: [null, Validators.required],
+  //   address: [null, Validators.required],
+  //   purpose: [null, Validators.required]
+  // });
+
+//services
+  message: string;
+
+
+  residentModel = new ResidentRecord('Uson','Ayn','Viloria','221','Paguio','School');
+
+  ngOnInit() {
+    this.document.currentLast.subscribe(message => this.residentModel.lastName = message)
+    this.document.currentFirst.subscribe(message => this.residentModel.firstName = message)
+    this.document.currentMid.subscribe(message => this.residentModel.midName = message)
+  }
+
+
+  onSubmit(){
+    this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName);
+    this.router.navigate(["/brgyclearanceView"]);
+
+  }
 
   hasUnitNumber = false;
 
@@ -27,62 +53,7 @@ export class BrgyClearanceComponent {
     {name: 'Alabama', abbreviation: 'AL'},
     {name: 'Alaska', abbreviation: 'AK'},
     {name: 'American Samoa', abbreviation: 'AS'},
-    {name: 'Arizona', abbreviation: 'AZ'},
-    {name: 'Arkansas', abbreviation: 'AR'},
-    {name: 'California', abbreviation: 'CA'},
-    {name: 'Colorado', abbreviation: 'CO'},
-    {name: 'Connecticut', abbreviation: 'CT'},
-    {name: 'Delaware', abbreviation: 'DE'},
-    {name: 'District Of Columbia', abbreviation: 'DC'},
-    {name: 'Federated States Of Micronesia', abbreviation: 'FM'},
-    {name: 'Florida', abbreviation: 'FL'},
-    {name: 'Georgia', abbreviation: 'GA'},
-    {name: 'Guam', abbreviation: 'GU'},
-    {name: 'Hawaii', abbreviation: 'HI'},
-    {name: 'Idaho', abbreviation: 'ID'},
-    {name: 'Illinois', abbreviation: 'IL'},
-    {name: 'Indiana', abbreviation: 'IN'},
-    {name: 'Iowa', abbreviation: 'IA'},
-    {name: 'Kansas', abbreviation: 'KS'},
-    {name: 'Kentucky', abbreviation: 'KY'},
-    {name: 'Louisiana', abbreviation: 'LA'},
-    {name: 'Maine', abbreviation: 'ME'},
-    {name: 'Marshall Islands', abbreviation: 'MH'},
-    {name: 'Maryland', abbreviation: 'MD'},
-    {name: 'Massachusetts', abbreviation: 'MA'},
-    {name: 'Michigan', abbreviation: 'MI'},
-    {name: 'Minnesota', abbreviation: 'MN'},
-    {name: 'Mississippi', abbreviation: 'MS'},
-    {name: 'Missouri', abbreviation: 'MO'},
-    {name: 'Montana', abbreviation: 'MT'},
-    {name: 'Nebraska', abbreviation: 'NE'},
-    {name: 'Nevada', abbreviation: 'NV'},
-    {name: 'New Hampshire', abbreviation: 'NH'},
-    {name: 'New Jersey', abbreviation: 'NJ'},
-    {name: 'New Mexico', abbreviation: 'NM'},
-    {name: 'New York', abbreviation: 'NY'},
-    {name: 'North Carolina', abbreviation: 'NC'},
-    {name: 'North Dakota', abbreviation: 'ND'},
-    {name: 'Northern Mariana Islands', abbreviation: 'MP'},
-    {name: 'Ohio', abbreviation: 'OH'},
-    {name: 'Oklahoma', abbreviation: 'OK'},
-    {name: 'Oregon', abbreviation: 'OR'},
-    {name: 'Palau', abbreviation: 'PW'},
-    {name: 'Pennsylvania', abbreviation: 'PA'},
-    {name: 'Puerto Rico', abbreviation: 'PR'},
-    {name: 'Rhode Island', abbreviation: 'RI'},
-    {name: 'South Carolina', abbreviation: 'SC'},
-    {name: 'South Dakota', abbreviation: 'SD'},
-    {name: 'Tennessee', abbreviation: 'TN'},
-    {name: 'Texas', abbreviation: 'TX'},
-    {name: 'Utah', abbreviation: 'UT'},
-    {name: 'Vermont', abbreviation: 'VT'},
-    {name: 'Virgin Islands', abbreviation: 'VI'},
-    {name: 'Virginia', abbreviation: 'VA'},
-    {name: 'Washington', abbreviation: 'WA'},
-    {name: 'West Virginia', abbreviation: 'WV'},
-    {name: 'Wisconsin', abbreviation: 'WI'},
-    {name: 'Wyoming', abbreviation: 'WY'}
+    {name: 'Arizona', abbreviation: 'AZ'}
   ];
 
   sidenav: MatSidenav;
@@ -102,7 +73,22 @@ export class BrgyClearanceComponent {
       this.isShowing = false;
     }
   }
-  constructor(private fb: FormBuilder,public router : Router) {}
+  constructor(private fb: FormBuilder,public router : Router, private document : DocumentService,public dialog: MatDialog) {}
+
+  // onSubmit(): void {
+  //   const dialogRef = this.dialog.open(BarangayClearancePdfComponent, {
+  //     width: '1240px',
+  //     height: '1754px',
+  //     data: {lastname: this.residentModel.lastName, firstname: this.residentModel.firstName}
+  //   });
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //     this.residentModel.lastName = result;
+  //   });
+  //   console.log(this.residentModel)
+  // }
+
 
   isSidebarOpen=true;
 
@@ -117,7 +103,5 @@ export class BrgyClearanceComponent {
   logout(){
     this.router.navigate(["/login"]);
   }
-  onSubmit() {
-    alert('Thanks!');
-  }
 }
+
