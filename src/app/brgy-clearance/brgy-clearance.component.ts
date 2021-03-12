@@ -35,14 +35,12 @@ export class BrgyClearanceComponent {
   residentModel = new ResidentRecord('Uson','Ayn','Viloria','221','Paguio','School');
 
   ngOnInit() {
-    this.document.currentLast.subscribe(message => this.residentModel.lastName = message)
-    this.document.currentFirst.subscribe(message => this.residentModel.firstName = message)
-    this.document.currentMid.subscribe(message => this.residentModel.midName = message)
+    
   }
 
 
   onSubmit(){
-    this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName);
+    this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose);
     this.router.navigate(["/brgyclearanceView"]);
 
   }

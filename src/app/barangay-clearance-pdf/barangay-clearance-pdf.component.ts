@@ -5,6 +5,7 @@ import {MatTableModule} from '@angular/material/table';
 
 import { DocumentService } from '../document.service';
 
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @Component({
@@ -13,16 +14,22 @@ import { DocumentService } from '../document.service';
   styleUrls: ['./barangay-clearance-pdf.component.css']
 })
 export class BarangayClearancePdfComponent implements OnInit {
-  name:string="Yowwwww";
+
   lastn: string;
   firstn: string;
   midn: string;
+  houseN: string;
+  street: string;
+  purpose: string;
 
 
   ngOnInit() {
     this.document.currentLast.subscribe(message => this.lastn = message);
     this.document.currentFirst.subscribe(message => this.firstn = message);
     this.document.currentMid.subscribe(message => this.midn = message);
+    this.document.currentHouseN.subscribe(message => this.houseN = message);
+    this.document.currentStreet.subscribe(message => this.street = message);
+    this.document.currentPurpose.subscribe(message => this.purpose = message);
   }
 
   title = 'html-to-pdf-angular-application';

@@ -5,8 +5,25 @@ mat-card {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+  height:1754px;
 }
 
 h1{
   text-align: center;
+}
+.container{
+  display: flex;
+}
+.leftside{
+  padding: 0px 10px 0px 25px ;
+  width: 20%;
+  border-right-style: solid;
+  border-left-color: black;
+}
+
+.rightside{
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 65%;
 }

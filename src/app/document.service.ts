@@ -9,22 +9,31 @@ import { ResidentRecord } from './resident-record';
 })
 export class DocumentService {
 
-  private lastName = new BehaviorSubject<string>("Last Name");
-  private firstName = new BehaviorSubject<string>("First Name");
-  private midName = new BehaviorSubject<string>("Middle Name");
+  private lastName = new BehaviorSubject<string>("");
+  private firstName = new BehaviorSubject<string>("");
+  private midName = new BehaviorSubject<string>("");
+  private houseNum = new BehaviorSubject<string>("");
+  private street = new BehaviorSubject<string>("");
+  private purpose = new BehaviorSubject<string>("");
   currentLast = this.lastName.asObservable();
   currentFirst = this.firstName.asObservable();
   currentMid = this.midName.asObservable();
+  currentHouseN = this.houseNum.asObservable();
+  currentStreet = this.street.asObservable();
+  currentPurpose = this.purpose.asObservable();
 
 
 
   // _url = ''
   constructor(private _http: HttpClient) { }
 
-  changeMessage(lastn: string,firstn: string,midn: string){
+  changeMessage(lastn: string,firstn: string,midn: string,houseN: string,street: string,purpose: string){
     this.lastName.next(lastn);
     this.firstName.next(firstn);
     this.midName.next(midn);
+    this.houseNum.next(houseN);
+    this.street.next(street);
+    this.purpose.next(purpose);
   }
 
   // pass(resRec: ResidentRecord){
