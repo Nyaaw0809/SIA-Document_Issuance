@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { NavComponent } from './nav/nav.component';
 import { BrgyClearanceComponent } from './brgy-clearance/brgy-clearance.component';
 import { IndigencyComponent } from './indigency/indigency.component';
 import { ResidencyCertComponent } from './residency-cert/residency-cert.component';
 import { LoginComponent } from './login/login.component';
 import { BarangayClearancePdfComponent } from './barangay-clearance-pdf/barangay-clearance-pdf.component';
+import { IndigencyPdfComponent } from './indigency-pdf/indigency-pdf.component';
+import { ResidencyPdfComponent } from './residency-pdf/residency-pdf.component';
+import { DocumentRecordsComponent } from './document-records/document-records.component';
 const routes: Routes = [
   {
     path: '',
@@ -15,9 +17,6 @@ const routes: Routes = [
   },{
     path: 'home',
     component: HomeComponent
-  },{
-    path: 'nav',
-    component: NavComponent
   },
   {
     path: 'brgy-clearance',
@@ -41,8 +40,24 @@ const routes: Routes = [
     path: 'brgyclearanceView',
     component: BarangayClearancePdfComponent
   }
-];
+  ,
+  {
+    path: 'indigencyView',
+    component: IndigencyPdfComponent
+  }
+  ,
+  {
+    path: 'residencyView',
+    component: ResidencyPdfComponent
+  }
+  ,
+  {
+    path: 'documentRecords',
+    component: DocumentRecordsComponent
+  }
 
+];
+IndigencyPdfComponent
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

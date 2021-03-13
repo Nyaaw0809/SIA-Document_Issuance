@@ -1,4 +1,4 @@
-
+<!-- DASHBOARD COMPONENT -->
 <div class="sidenavbar">
   <!-- NAVBAR -->
   <!-- SIDENAV -->
@@ -9,8 +9,9 @@
               <h2 style="color: #020101">ADMIN</h2>
               <mat-divider [vertical]="false"></mat-divider>
           <button mat-button class="sidebarcontent" routerLink="/home" routerLinkActive="selected"><mat-icon style="margin-left: -38px; margin-right: 5px;" class="sidenavBtn">dashboard</mat-icon> Dashboard</button><br>
+          <button mat-button class="sidebarcontent" routerLink="/documentRecords" ><mat-icon style="margin-left: -38px; margin-right: 5px;" class="sidenavBtn">dashboard</mat-icon> Issued Documents</button><br>
 
-          <h3 style="color: #020101">Documents</h3>
+          <h3 style="color: #020101">Documents</h3><br>
               <mat-divider [vertical]="false"></mat-divider>
           <button mat-button class="sidebarcontent" routerLink="/brgy-clearance" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Barangay Clearance</button><br>
           <button mat-button class="sidebarcontent" routerLink="/indigency" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Certificate of Indigency</button><br>
@@ -32,7 +33,7 @@
                 </button>
               </mat-toolbar>
           </div>
-
+        <h1>Dashboard ng Resident Profiling siguro pwede dito, Any Informative data</h1>
 <div class="dashboardCard">
   <mat-card class="patients-card" style="background-color: #b0dfe5;">
     <mat-card-content>
@@ -57,63 +58,6 @@
   </mat-card>
 
 </div>
-
-  <mat-card class="tableCon">
-  <div class="grid-container">
-
-
-    <h1 class="mat-h1">Records</h1>
-
-    <mat-grid-list cols="4" rowHeight="50px">
-      <mat-grid-tile>
-        <mat-form-field>
-          <mat-label>Filter</mat-label>
-          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile ></mat-grid-tile>
-      <mat-grid-tile ></mat-grid-tile>
-
-    </mat-grid-list>
-    <mat-grid-list cols="2" rowHeight="100px">
-
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef> Document ID </th>
-          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-        </ng-container>
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-
-        <!-- Weight Column -->
-        <ng-container matColumnDef="weight">
-          <th mat-header-cell *matHeaderCellDef> Document Type </th>
-          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="symbol">
-          <th mat-header-cell *matHeaderCellDef> Purpose </th>
-          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-        <!-- Row shown when there is no matching data. -->
-
-      </table>
-
-    </mat-grid-list>
-
-</div>
-</mat-card>
 
 </mat-sidenav-content>
 </mat-sidenav-container>

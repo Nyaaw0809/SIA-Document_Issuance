@@ -10,7 +10,10 @@
               <mat-divider [vertical]="false"></mat-divider>
           <button mat-button class="sidebarcontent" routerLink="/home" routerLinkActive="selected"><mat-icon style="margin-left: -38px; margin-right: 5px;" class="sidenavBtn">dashboard</mat-icon> Dashboard</button><br>
 
+          <button mat-button class="sidebarcontent" routerLink="/documentRecords" ><mat-icon style="margin-left: -38px; margin-right: 5px;" class="sidenavBtn">dashboard</mat-icon> Issued Documents</button><br>
+
           <h3 style="color: #020101">Documents</h3>
+          <br>
               <mat-divider [vertical]="false"></mat-divider>
           <button mat-button class="sidebarcontent" routerLink="/brgy-clearance" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Barangay Clearance</button><br>
           <button mat-button class="sidebarcontent" routerLink="/indigency" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Certificate of Indigency</button><br>
@@ -32,7 +35,10 @@
                 </button>
               </mat-toolbar>
           </div>
-            <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+
+
+
+            <form #addForm='ngForm' novalidate (ngSubmit)="onSubmit()">
               <mat-card style="width: 90%;" class="shipping-card">
                 <h1 class="poppins-bold">Name</h1>
                 <div class="zontaline"></div>
@@ -42,30 +48,31 @@
 
                     <div class="col">
                       <mat-form-field class="full-width" appearance="outline">
-                        <input matInput placeholder="Last name" formControlName="lastName">
-                        <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                        <input matInput placeholder="Last name"  name="lastname" [(ngModel)]="residentModel.lastName">
+                        <!-- <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
                           Last name is <strong>required</strong>
-                        </mat-error>
+                        </mat-error> -->
                       </mat-form-field>
                     </div>
 
                     <div class="col">
                       <mat-form-field class="full-width" appearance="outline">
-                        <input matInput placeholder="First name" formControlName="firstName">
-                        <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
+                        <input matInput placeholder="First name"  name="firstname" [(ngModel)]="residentModel.firstName">
+                        <!-- <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
                           First name is <strong>required</strong>
-                        </mat-error>
+                        </mat-error> -->
                       </mat-form-field>
                     </div>
 
                     <div class="col">
-                      <mat-form-field class="full-width" appearance="outline">
-                        <input matInput placeholder="Middle name" formControlName="midName">
-                        <mat-error *ngIf="addressForm.controls['midName'].hasError('required')">
-                          Middle name is <strong>required</strong>
-                        </mat-error>
+                      <mat-form-field  appearance="outline" class="full-width">
+                        <input matInput placeholder="Middle name"  name="midname" [(ngModel)]="residentModel.midName">
+                        <!-- <mat-error *ngIf="addressForm.controls['midName'].hasError('required')">
+                          First name is <strong>required</strong>
+                        </mat-error> -->
                       </mat-form-field>
                     </div>
+
                   </div>
                   </div>
                   <h1 class="poppins-bold">Other Details</h1>
@@ -74,43 +81,43 @@
 
                     <div class="col">
                       <mat-form-field class="full-width" appearance="outline">
-                        <input matInput placeholder="Age" formControlName="age">
-                        <mat-error *ngIf="addressForm.controls['age'].hasError('required')">
+                        <input matInput placeholder="Age" name="age" [(ngModel)]="residentModel.age">
+                        <!-- <mat-error *ngIf="addressForm.controls['age'].hasError('required')">
                          Age is <strong>required</strong>
-                        </mat-error>
+                        </mat-error> -->
                       </mat-form-field>
                     </div>
 
                     <div class="col">
                       <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Gender</mat-label>
-                        <mat-select formControlName="gender">
+                        <mat-select  name="gender" [(ngModel)]="residentModel.gender">
                           <mat-option value="male">Male</mat-option>
                           <mat-option value="female">Female</mat-option>
                         </mat-select>
-                        <mat-error *ngIf="addressForm.controls['gender'].hasError('required')">
+                        <!-- <mat-error *ngIf="addressForm.controls['gender'].hasError('required')">
                           Gender is <strong>required</strong>
-                        </mat-error>
+                        </mat-error> -->
                       </mat-form-field>
                     </div>
 
                     <div class="col">
                       <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Civil Status</mat-label>
-                        <mat-select formControlName="status">
+                        <mat-select  name="status" [(ngModel)]="residentModel.status">
                           <mat-option value="male">Single</mat-option>
                           <mat-option value="female">Married</mat-option>
                           <mat-option value="female">Widowed</mat-option>
                         </mat-select>
-                        <mat-error *ngIf="addressForm.controls['status'].hasError('required')">
+                        <!-- <mat-error *ngIf="addressForm.controls['status'].hasError('required')">
                           Civil Status name is <strong>required</strong>
-                        </mat-error>
+                        </mat-error> -->
                       </mat-form-field>
                     </div>
 
                   </div>
                 <mat-card-actions>
-                  <button mat-raised-button color="primary" type="submit">Submit</button>
+                  <button mat-raised-button color="primary" type="submit">Generate</button>
                 </mat-card-actions>
               </mat-card>
             </form>

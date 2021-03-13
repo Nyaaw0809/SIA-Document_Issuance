@@ -15,12 +15,19 @@ export class DocumentService {
   private houseNum = new BehaviorSubject<string>("");
   private street = new BehaviorSubject<string>("");
   private purpose = new BehaviorSubject<string>("");
+  private age = new BehaviorSubject<string>("");
+  private gender = new BehaviorSubject<string>("");
+  private status = new BehaviorSubject<string>("");
   currentLast = this.lastName.asObservable();
   currentFirst = this.firstName.asObservable();
   currentMid = this.midName.asObservable();
   currentHouseN = this.houseNum.asObservable();
   currentStreet = this.street.asObservable();
   currentPurpose = this.purpose.asObservable();
+  currentAge = this.age.asObservable();
+  currentGender = this.gender.asObservable();
+  currentStatus = this.status.asObservable();
+
 
 
 
@@ -34,6 +41,23 @@ export class DocumentService {
     this.houseNum.next(houseN);
     this.street.next(street);
     this.purpose.next(purpose);
+  }
+
+  changeMessageIndigency(lastn: string,firstn: string,midn: string,age: string,gender: string,status: string){
+    this.lastName.next(lastn);
+    this.firstName.next(firstn);
+    this.midName.next(midn);
+    this.age.next(age);
+    this.gender.next(gender);
+    this.status.next(status);
+  }
+
+  changeMessageResidency(lastn: string,firstn: string,midn: string,houseN: string,street: string){
+    this.lastName.next(lastn);
+    this.firstName.next(firstn);
+    this.midName.next(midn);
+    this.houseNum.next(houseN);
+    this.street.next(street);
   }
 
   // pass(resRec: ResidentRecord){

@@ -10,7 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 
 import { MaterialModule } from './material/material.module';
-import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -27,18 +26,23 @@ import { IndigencyComponent } from './indigency/indigency.component';
 import { ResidencyCertComponent } from './residency-cert/residency-cert.component';
 import { LoginComponent } from './login/login.component';
 import { BarangayClearancePdfComponent } from './barangay-clearance-pdf/barangay-clearance-pdf.component';
+import { IndigencyPdfComponent } from './indigency-pdf/indigency-pdf.component';
+import { ResidencyPdfComponent } from './residency-pdf/residency-pdf.component';
+import { DocumentRecordsComponent } from './document-records/document-records.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavComponent,
     BrgyClearanceComponent,
     IndigencyComponent,
     ResidencyCertComponent,
     LoginComponent,
-    BarangayClearancePdfComponent
+    BarangayClearancePdfComponent,
+    IndigencyPdfComponent,
+    ResidencyPdfComponent,
+    DocumentRecordsComponent
   ],
   imports: [
     BrowserModule,

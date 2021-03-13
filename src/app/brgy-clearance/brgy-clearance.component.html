@@ -10,7 +10,10 @@
               <mat-divider [vertical]="false"></mat-divider>
           <button mat-button class="sidebarcontent" routerLink="/home" routerLinkActive="selected"><mat-icon style="margin-left: -38px; margin-right: 5px;" class="sidenavBtn">dashboard</mat-icon> Dashboard</button><br>
 
+          <button mat-button class="sidebarcontent" routerLink="/documentRecords" ><mat-icon style="margin-left: -38px; margin-right: 5px;" class="sidenavBtn">dashboard</mat-icon> Issued Documents</button><br>
+
           <h3 style="color: #020101">Documents</h3>
+          <br>
               <mat-divider [vertical]="false"></mat-divider>
           <button mat-button class="sidebarcontent" routerLink="/brgy-clearance" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Barangay Clearance</button><br>
           <button mat-button class="sidebarcontent" routerLink="/indigency" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Certificate of Indigency</button><br>
@@ -111,7 +114,7 @@
                 </div>
               </div>
           <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit"  >Submit</button>
+            <button mat-raised-button color="primary" type="submit"  >Generate</button>
           </mat-card-actions>
         </mat-card>
       </form>
