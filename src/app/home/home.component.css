@@ -197,6 +197,7 @@ mat-card-title {
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  margin-bottom: 40px;
 }
 
 .dashboardSecondCard {
@@ -260,4 +261,23 @@ mat-icon {
   margin-left: 15px;
   margin-right: 15px;
   padding: 25px;
+}
+
+.gridCon{
+  display: flex;
+  width: 95%;
+  margin: auto;
+  padding: 20px ;
+}
+
+.sqCard{
+  margin-right: 50px;
+  width: 30%;
+  height: 300px;
+}
+
+.bgrCard{
+  margin-right: 30px;
+  width: 50%;
+  height: 450px;
 }

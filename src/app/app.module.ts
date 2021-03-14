@@ -29,6 +29,8 @@ import { BarangayClearancePdfComponent } from './barangay-clearance-pdf/barangay
 import { IndigencyPdfComponent } from './indigency-pdf/indigency-pdf.component';
 import { ResidencyPdfComponent } from './residency-pdf/residency-pdf.component';
 import { DocumentRecordsComponent } from './document-records/document-records.component';
+import { ChartsModule } from 'ng2-charts';
+
 
 
 @NgModule({
@@ -60,6 +62,7 @@ import { DocumentRecordsComponent } from './document-records/document-records.co
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
+    ChartsModule
 
   ],
   providers: [],

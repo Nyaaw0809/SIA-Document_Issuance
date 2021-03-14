@@ -26,7 +26,7 @@
                 <button mat-icon-button class="example-icon" (click)="isExpanded = !isExpanded" aria-label="Example icon-button with menu icon" mat-button (click)="drawer.toggle()">
                   <mat-icon>menu</mat-icon>
                 </button>
-                <h1 style="color: #ffffff">Document Issuance</h1>
+                <h1 style="color: #ffffff">Document Issuance: Barangay Clearance</h1>
 
                 <span class="example-spacer"></span>
                 <button mat-icon-button (click)="logout()" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -47,7 +47,7 @@
 
               <div class="col">
                 <mat-form-field class="full-width" appearance="outline">
-                  <input matInput placeholder="Last name"  name="lastname" [(ngModel)]="residentModel.lastName">
+                  <input matInput placeholder="Last name"  name="lastname" (ngModel)="residentModel.lastName">
                   <!-- <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
                     Last name is <strong>required</strong>
                   </mat-error> -->
@@ -56,7 +56,7 @@
 
               <div class="col">
                 <mat-form-field class="full-width" appearance="outline">
-                  <input matInput placeholder="First name"  name="firstname" [(ngModel)]="residentModel.firstName">
+                  <input matInput placeholder="First name"  name="firstname" (ngModel)="residentModel.firstName">
                   <!-- <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
                     First name is <strong>required</strong>
                   </mat-error> -->
@@ -65,7 +65,7 @@
 
               <div class="col">
                 <mat-form-field  appearance="outline" class="full-width">
-                  <input matInput placeholder="Middle name"  name="midname" [(ngModel)]="residentModel.midName">
+                  <input matInput placeholder="Middle name"  name="midname" (ngModel)="residentModel.midName">
                   <!-- <mat-error *ngIf="addressForm.controls['midName'].hasError('required')">
                     First name is <strong>required</strong>
                   </mat-error> -->
@@ -80,7 +80,7 @@
                 <div class="row">
                   <div class="col">
                         <mat-form-field   appearance="outline">
-                          <textarea matInput placeholder="House Number" name="housenum" [(ngModel)]="residentModel.houseNum"></textarea>
+                          <textarea matInput placeholder="House Number" name="housenum" (ngModel)="residentModel.houseNum"></textarea>
                           <!-- <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
                             Address is <strong>required</strong>
                           </mat-error> -->
@@ -88,7 +88,7 @@
                   </div>
                   <div class="col">
                     <mat-form-field  appearance="outline">
-                      <textarea matInput placeholder="Street" name="street" [(ngModel)]="residentModel.street"></textarea>
+                      <textarea matInput placeholder="Street" name="street" (ngModel)="residentModel.street"></textarea>
                       <!-- <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
                         Address is <strong>required</strong>
                       </mat-error> -->
@@ -105,7 +105,7 @@
                   <div class="col">
 
                     <mat-form-field  appearance="outline" class="full-width" >
-                      <input matInput placeholder="Purpose" name="purpose" [(ngModel)]="residentModel.purpose">
+                      <input matInput placeholder="Purpose" name="purpose" (ngModel)="residentModel.purpose">
                       <!-- <mat-error *ngIf="addressForm.controls['purpose'].hasError('required')">
                         Purpose is <strong>required</strong>
                       </mat-error> -->

@@ -21,7 +21,7 @@
 			$p = [
 				"uc"=>$uc,
 				"ue"=>$ue,
-				"ito"=>$ito
+				"ito"=>$ito,
 				"iby"=>"The Developer",
 				"ie"=>"thedevelopers@test.com",
 				"exp"=>date("Y-m-d H:i:s")
@@ -33,7 +33,7 @@
 			$header = str_replace("=", "",$this->generateHeader());
 			$payload = str_replace("=", "", $this->generatePayload($usercode, $useremail, $fullname));
 			$signature = hash_hmac("sha256", "$header.$payload", base64_encode(SECRET));
-			return "$header.$payload.".base64_encode($signature)
+			return "$header.$payload.".base64_encode($signature);
 		}
 
 		public function showToken() {

@@ -1,37 +1,38 @@
 <?php
 	class GlobalMethods {
 		protected $pdo;
-		
-		public function __construct(\PDO $pdo); { //accepts variable named pdo of type PDO; the db itself
+
+		public function __construct(\PDO $pdo) {
+      //accepts variable named pdo of type PDO; the db itself
 			$this->pdo = $pdo;
 		}
 
 		public function exec_query($sql) { //for retrieve
-			$data = array(); 
-			$errmsg = ""; 
+			$data = array();
+			$errmsg = "";
 			$code = 0;
-			
+
 			try {
 				if($res = $this->pdo->query($sql)->fetchAll()) {
 					foreach($res as $rec) {
 						array_push($data, $rec);
 					}
-					$res = null; 
+					$res = null;
 					$code = 200;
 				}
 			}
 			catch(\PDOException $e) {
-				$errmsg = $e->getMessage(); 
+				$errmsg = $e->getMessage();
 				$code = 401;
 			}
 			return array("code"=>$code, "data"=>$data, "errmsg"=>$errmsg);
 		}
 
 		public function insert($table, $data) {
-			$i = 0; 
-			$fields=[]; 
+			$i = 0;
+			$fields=[];
 			$values=[];
-			
+
 			foreach($data as $key => $value) {
 				array_push($fields, $key);
 				array_push($values, $value);
@@ -40,7 +41,7 @@
 				$ctr = 0;
 				$sqlstr="INSERT INTO $table(";
 				foreach ($fields as $value) {
-					$sqlstr.=$value; 
+					$sqlstr.=$value;
 					$ctr++;
 					if($ctr<count($fields)) {
 						$sqlstr.=", ";
@@ -59,10 +60,10 @@
 		}
 
 		public function update($table, $data, $conditionStringPassed) {
-			$fields=[]; 
+			$fields=[];
 			$values=[];
 			$setStr = "";
-			
+
 			foreach($data as $key => $value) {
 				array_push($fields, $key);
 				array_push($values, $value);
@@ -71,7 +72,7 @@
 				$ctr = 0;
 				$sqlstr="UPDATE $table SET ";
 				foreach ($data as $key => $value) {
-					$sqlstr.="$key=?"; 
+					$sqlstr.="$key=?";
 					$ctr++;
 					if($ctr<count($fields)) {
 						$sqlstr.=", ";

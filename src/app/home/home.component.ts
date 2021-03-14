@@ -1,30 +1,11 @@
-import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Component,NgModule } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
 import { Router } from '@angular/router';
 import { MatSidenav } from '@angular/material/sidenav';
-import {MatTableDataSource} from '@angular/material/table';
-export interface Records {
-  name: string;
-  position: number;
-  weight: string;
-  symbol: string;
-}
 
-const ELEMENT_DATA: Records[] = [
-  {position: 1, name: 'Johncel Gonzaga', weight: 'Barangay Clearance', symbol: 'School'},
-  {position: 2, name: 'Allen Uy', weight: 'Certificate of Indigency', symbol: 'School'},
-  {position: 3, name: 'Ranny Edejer', weight: 'Certificate of Indigency', symbol: 'Job Application'},
-  {position: 4, name: 'Ayn Uson', weight: 'Barangay Clearance', symbol: 'School'},
-  {position: 5, name: 'Mitchell Alop', weight: 'Certificate of Indigency', symbol: 'Job Application'},
-  {position: 6, name: 'Ryunosuke Fujii', weight: 'Certificate of Indigency', symbol: 'School'},
-  {position: 7, name: 'Austin Aranda', weight: 'Barangay Clearance', symbol: 'School'},
-  {position: 8, name: 'Mark Fabro', weight: 'Certificate of Indigency', symbol: 'Job Application'},
-  {position: 9, name: 'Levi Ackerman', weight: 'Certificate of Indigency', symbol: 'School'},
-  {position: 10, name: 'Eren Yeager', weight: 'Barangay Clearance', symbol: 'Job Application'},
-];
-
+import { ChartType, ChartOptions,ChartDataSets } from 'chart.js';
+import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip,Color } from 'ng2-charts';
 
 @Component({
   selector: 'app-home',
@@ -32,8 +13,34 @@ const ELEMENT_DATA: Records[] = [
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  //Line Chart
+  public lineChartData: ChartDataSets[] = [
+    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Issued Documents' },
+  ];
+  public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartOptions: (ChartOptions & { annotation ?: any }) = {
+    responsive: true,
+  };
+  public lineChartColors: Color[] = [
+    {
+      borderColor: 'black',
+      backgroundColor: 'rgba(255,0,0,0.3)',
+    },
+  ];
+  public lineChartLegend = true;
+  public lineChartType = 'line';
+  public lineChartPlugins = [];
+
+
+  //Pie Chart
+  public pieChartOptions: ChartOptions = {
+    responsive: true,
+  };
+  public pieChartLabels: Label[] = [['Barangay', 'Clearance'], ['Certificate', 'of', 'Indigency'], ['Certificate', 'of', 'Residency']];
+  public pieChartData: SingleDataSet = [300, 500, 100];
+  public pieChartType: ChartType = 'pie';
+  public pieChartLegend = true;
+  public pieChartPlugins = [];
 
 
   sidenav: MatSidenav;
@@ -54,13 +61,11 @@ export class HomeComponent {
     }
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  constructor(private breakpointObserver: BreakpointObserver, public router : Router) {
+    monkeyPatchChartJsTooltip();
+    monkeyPatchChartJsLegend();
   }
-
-
-  constructor(private breakpointObserver: BreakpointObserver, public router : Router) {}
 
 
 

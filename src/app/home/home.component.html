@@ -25,7 +25,7 @@
                 <button mat-icon-button class="example-icon" (click)="isExpanded = !isExpanded" aria-label="Example icon-button with menu icon" mat-button (click)="drawer.toggle()">
                   <mat-icon>menu</mat-icon>
                 </button>
-                <h1 style="color: #ffffff">Document Issuance</h1>
+                <h1 style="color: #ffffff">Document Issuance: Dashborad</h1>
 
                 <span class="example-spacer"></span>
                 <button mat-icon-button (click)="logout()" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -33,31 +33,48 @@
                 </button>
               </mat-toolbar>
           </div>
-        <h1>Dashboard ng Resident Profiling siguro pwede dito, Any Informative data</h1>
-<div class="dashboardCard">
-  <mat-card class="patients-card" style="background-color: #b0dfe5;">
-    <mat-card-content>
-      <mat-card-title class="poppins" style="font-size: 16px;">Total Requested Barangay Clearance</mat-card-title>
-      <p style="font-weight: 700; font-size: 38px;">3,000</p>
-    </mat-card-content><br><br>
-  </mat-card>
 
-  <mat-card class="patients-card" style="background-color: #b0dfe5;">
-    <mat-card-content >
-      <mat-card-title class="poppins" style="font-size: 16px; text-align: left;">Total Requested Certificate of Indigency</mat-card-title>
-      <p style="font-weight: 700; font-size: 38px;">1,000</p>
-    </mat-card-content><br><br>
-  </mat-card>
 
-  <mat-card class="patients-card" style="background-color: #b0dfe5;">
-    <mat-card-content >
-      <mat-card-title class="poppins" style="font-size: 16px; text-align: left;">Total Requested Certificate of Residency</mat-card-title>
+            <div class="gridCon">
+              <mat-card class="bgrCard">
+                <h2>Issued Documents Chart</h2>
+                <div style="display: block; margin-top: 50px;">
+                  <canvas baseChart
+                    [data]="pieChartData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType"
+                    [options]="pieChartOptions"
+                    [plugins]="pieChartPlugins"
+                    [legend]="pieChartLegend">
+                  </canvas>
+                </div>
+              </mat-card>
+              <mat-card class="bgrCard">
+                <h2>Issued Documents per Month</h2>
+                <div style="display: block;">
+                  <canvas baseChart width="300" height="300"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    [plugins]="lineChartPlugins">
+                  </canvas>
+                </div>
+              </mat-card>
+          </div>
+          <div class="gridCon">
+            <mat-card class="sqCard">CARD1</mat-card>
+            <mat-card class="sqCard">CARD2</mat-card>
+            <mat-card class="sqCard">CARD3</mat-card>
+          </div>
+          <div class="gridCon">
+            <mat-card class="sqCard">CARD4</mat-card>
+            <mat-card class="sqCard">CARD5</mat-card>
+            <mat-card class="sqCard">CARD6</mat-card>
+          </div>
 
-      <p style="font-weight: 700; font-size: 38px;">1,000</p>
-    </mat-card-content><br><br>
-  </mat-card>
-
-</div>
 
 </mat-sidenav-content>
 </mat-sidenav-container>
