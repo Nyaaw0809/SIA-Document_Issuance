@@ -48,7 +48,7 @@
 
                     <div class="col">
                       <mat-form-field class="full-width" appearance="outline">
-                        <input matInput placeholder="Last name"  name="lastname" (ngModel)="residentModel.lastName">
+                        <input matInput placeholder="Last name"  name="lastname" [(ngModel)]="residentModel.lastName">
                         <!-- <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
                           Last name is <strong>required</strong>
                         </mat-error> -->
@@ -57,7 +57,7 @@
 
                     <div class="col">
                       <mat-form-field class="full-width" appearance="outline">
-                        <input matInput placeholder="First name"  name="firstname" (ngModel)="residentModel.firstName">
+                        <input matInput placeholder="First name"  name="firstname" [(ngModel)]="residentModel.firstName">
                         <!-- <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
                           First name is <strong>required</strong>
                         </mat-error> -->
@@ -66,7 +66,7 @@
 
                     <div class="col">
                       <mat-form-field  appearance="outline" class="full-width">
-                        <input matInput placeholder="Middle name"  name="midname" (ngModel)="residentModel.midName">
+                        <input matInput placeholder="Middle name"  name="midname" [(ngModel)]="residentModel.midName">
                         <!-- <mat-error *ngIf="addressForm.controls['midName'].hasError('required')">
                           First name is <strong>required</strong>
                         </mat-error> -->
@@ -81,7 +81,7 @@
 
                     <div class="col">
                       <mat-form-field class="full-width" appearance="outline">
-                        <input matInput placeholder="Age" name="age" (ngModel)="residentModel.age">
+                        <input matInput placeholder="Age" name="age" [(ngModel)]="residentModel.age">
                         <!-- <mat-error *ngIf="addressForm.controls['age'].hasError('required')">
                          Age is <strong>required</strong>
                         </mat-error> -->
@@ -91,7 +91,7 @@
                     <div class="col">
                       <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Gender</mat-label>
-                        <mat-select  name="gender" (ngModel)="residentModel.gender">
+                        <mat-select  name="gender" [(ngModel)]="residentModel.gender">
                           <mat-option value="male">Male</mat-option>
                           <mat-option value="female">Female</mat-option>
                         </mat-select>
@@ -104,7 +104,7 @@
                     <div class="col">
                       <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Civil Status</mat-label>
-                        <mat-select  name="status" (ngModel)="residentModel.status">
+                        <mat-select  name="status" [(ngModel)]="residentModel.status">
                           <mat-option value="male">Single</mat-option>
                           <mat-option value="female">Married</mat-option>
                           <mat-option value="female">Widowed</mat-option>
