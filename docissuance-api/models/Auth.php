@@ -2,42 +2,42 @@
 	class Auth {
 		protected $gm, $pdo;
 
-		public function __construct(\PDO $pdo) {
-			$this->gm = new GlobalMethods($pdo);
+		public function __contruct(\PDO $pdo) {
 			$this->pdo = $pdo;
+			$this->gm = new GlobalMethods($pdo);
 		}
 
 		protected function generateHeader() {
 			$h = [
-				"type"=>"JWT",
-				"alg"=>"HS256",
-				"app"=>"My System",
-				"dev"=>"The Developer"
+				"typ" => "JWT",
+				"alg" => "HS256",
+				"app" => "Document Issuance System",
+				"dev" => "Ayn Gandhi V. Uson"
 			];
-			return base64_encode(json_encode($h));
+			return str_replace("=", "", base64_encode(json_encode($h)));
 		}
 
 		protected function generatePayload($uc, $ue, $ito) {
 			$p = [
-				"uc"=>$uc,
-				"ue"=>$ue,
-				"ito"=>$ito,
-				"iby"=>"The Developer",
-				"ie"=>"thedevelopers@test.com",
-				"exp"=>date("Y-m-d H:i:s")
+				"uc" => $uc,
+				"ue" => $ue,
+				"ito" => $ito,
+				"iby" => "Ayn Gandhi V. Uson",
+				"ie" => "usonayn@gmail.com",
+				"exp" => date("Y-m-d H:i:s")
 			];
-			return base64_encode(json_encode($p));
+			return str_replace("=", "", base64_decode(json_encode($p)));
 		}
 
-		protected function generateToken($usercode, $useremail, $fullname) {
-			$header = str_replace("=", "",$this->generateHeader());
-			$payload = str_replace("=", "", $this->generatePayload($usercode, $useremail, $fullname));
+		protected function generateToken($user_code, $user_email, $fullname) {
+			$header = $this->generateHeader();
+			$payload = $this->generatePayload($user_code, $user_email, $fullname);
 			$signature = hash_hmac("sha256", "$header.$payload", base64_encode(SECRET));
-			return "$header.$payload.".base64_encode($signature);
+			return "$header.$payload." .str_replace("=", "", base64_encode($signature));
 		}
 
 		public function showToken() {
-			return $this->generateToken("200210100","200210100@test.com","Juan Dela Cruz");
+			return $this->generateToken("201811226", "201811226@gordoncollege.edu.ph", "Ayn Gandhi V. Uson");
 		}
 	}
 ?>

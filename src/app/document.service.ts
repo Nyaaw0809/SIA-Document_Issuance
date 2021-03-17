@@ -2,12 +2,19 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import {HttpClient} from '@angular/common/http';
 import { ResidentRecord } from './resident-record';
+import { Observable } from 'rxjs';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DocumentService {
+  apiUrl = "http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/Z2V0Ym9va3M=";
+
+  getToken(){
+    return this._http.get(this.apiUrl);
+  }
 
   private lastName = new BehaviorSubject<string>("");
   private firstName = new BehaviorSubject<string>("");

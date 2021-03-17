@@ -7,7 +7,7 @@
 			$this->pdo = $pdo;
 		}
 
-		public function exec_query($sql) { //for retrieve
+		public function select($sql) { //for retrieve
 			$data = array();
 			$errmsg = "";
 			$code = 0;

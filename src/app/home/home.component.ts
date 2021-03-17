@@ -6,6 +6,8 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 import { ChartType, ChartOptions,ChartDataSets } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip,Color } from 'ng2-charts';
+import {DocumentService} from '../document.service';
+
 
 @Component({
   selector: 'app-home',
@@ -13,6 +15,18 @@ import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsToolt
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  token:string;
+
+
+  ngOnInit(){
+    return this.document.getToken()
+    .subscribe((data)=>{
+      this.token = JSON.stringify(data);
+      console.log(this.token);
+      console.log("get api data", data);
+    }
+    );
+  }
   //Line Chart
   public lineChartData: ChartDataSets[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Issued Documents' },
@@ -62,7 +76,7 @@ export class HomeComponent {
   }
 
 
-  constructor(private breakpointObserver: BreakpointObserver, public router : Router) {
+  constructor(private breakpointObserver: BreakpointObserver, public router : Router, private document : DocumentService) {
     monkeyPatchChartJsTooltip();
     monkeyPatchChartJsLegend();
   }
