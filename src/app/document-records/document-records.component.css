@@ -81,6 +81,16 @@ table {
   background-color: #3b8beb;
 }
 
+.search-bar {
+  display: block;
+  overflow: hidden;
+  padding: 0 4px 0 6px;
+}
+
+.search {
+  float: left;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
