@@ -32,7 +32,7 @@ export class BrgyClearanceComponent {
   message: string;
 
 
-  residentModel = new ResidentRecord('','','','','','');
+  residentModel = new ResidentRecord('','','','','','','');
 
   ngOnInit() {
 
@@ -43,7 +43,7 @@ export class BrgyClearanceComponent {
     //Insert Record IssuedDocs_tbl and Payment_tbl
       // HERE
     //pass input value to service to another component
-    this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose);
+    this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose,this.residentModel.brgy);
     this.router.navigate(["/brgyclearanceView"]);
 
   }

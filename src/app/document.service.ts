@@ -22,6 +22,7 @@ export class DocumentService {
   private houseNum = new BehaviorSubject<string>("");
   private street = new BehaviorSubject<string>("");
   private purpose = new BehaviorSubject<string>("");
+  private brgy = new BehaviorSubject<string>("");
   private age = new BehaviorSubject<string>("");
   private gender = new BehaviorSubject<string>("");
   private status = new BehaviorSubject<string>("");
@@ -31,6 +32,7 @@ export class DocumentService {
   currentHouseN = this.houseNum.asObservable();
   currentStreet = this.street.asObservable();
   currentPurpose = this.purpose.asObservable();
+  currentBrgy = this.brgy.asObservable();
   currentAge = this.age.asObservable();
   currentGender = this.gender.asObservable();
   currentStatus = this.status.asObservable();
@@ -41,13 +43,14 @@ export class DocumentService {
   // _url = ''
   constructor(private _http: HttpClient) { }
 
-  changeMessage(lastn: string,firstn: string,midn: string,houseN: string,street: string,purpose: string){
+  changeMessage(lastn: string,firstn: string,midn: string,houseN: string,street: string,purpose: string,brgy: string){
     this.lastName.next(lastn);
     this.firstName.next(firstn);
     this.midName.next(midn);
     this.houseNum.next(houseN);
     this.street.next(street);
     this.purpose.next(purpose);
+    this.brgy.next(brgy);
   }
 
   changeMessageIndigency(lastn: string,firstn: string,midn: string,age: string,gender: string,status: string){

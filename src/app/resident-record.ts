@@ -8,6 +8,7 @@ export class ResidentRecord {
     public midName: string,
     public houseNum: string,
     public street: string,
-    public purpose:string
+    public purpose:string,
+    public brgy: string
 ){}
 }

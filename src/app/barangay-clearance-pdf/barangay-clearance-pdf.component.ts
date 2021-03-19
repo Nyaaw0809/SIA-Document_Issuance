@@ -15,12 +15,14 @@ import {MatGridListModule} from '@angular/material/grid-list';
 })
 export class BarangayClearancePdfComponent implements OnInit {
 
+  myDate = Date.now();
   lastn: string;
   firstn: string;
   midn: string;
   houseN: string;
   street: string;
   purpose: string;
+  brgy: string;
 
 
   ngOnInit() {
@@ -30,6 +32,7 @@ export class BarangayClearancePdfComponent implements OnInit {
     this.document.currentHouseN.subscribe(message => this.houseN = message);
     this.document.currentStreet.subscribe(message => this.street = message);
     this.document.currentPurpose.subscribe(message => this.purpose = message);
+    this.document.currentBrgy.subscribe(message => this.brgy = message);
   }
 
   title = 'html-to-pdf-angular-application';

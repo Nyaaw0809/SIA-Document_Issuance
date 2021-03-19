@@ -58,7 +58,7 @@ mat-nav-list {
   margin-left: 40px;
 }
 
-.tableCon{
+.tableCon {
   width: 90%;
   height: 100%;
   margin-top: 20px;
@@ -263,20 +263,20 @@ mat-icon {
   padding: 25px;
 }
 
-.gridCon{
+.gridCon {
   display: flex;
   width: 95%;
   margin: auto;
-  padding: 20px ;
+  padding: 20px;
 }
 
-.sqCard{
+.sqCard {
   margin-right: 50px;
   width: 30%;
   height: 300px;
 }
 
-.bgrCard{
+.bgrCard {
   margin-right: 30px;
   width: 50%;
   height: 450px;
