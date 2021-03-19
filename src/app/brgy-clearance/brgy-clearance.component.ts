@@ -29,7 +29,7 @@ export class BrgyClearanceComponent {
   // });
 
 //services
-  message: string;
+  message: any[];
 
 
   residentModel = new ResidentRecord('','','','','','','');
@@ -37,9 +37,15 @@ export class BrgyClearanceComponent {
   ngOnInit() {
 
   }
-
+  resident: any = {};
 //To document preview
   onSubmit(){
+    //notWorking pa
+    console.log(this.residentModel);
+    this.document.newRecord(this.residentModel).subscribe((data: any) =>{console.log(data);});
+
+
+
     //Insert Record IssuedDocs_tbl and Payment_tbl
       // HERE
     //pass input value to service to another component

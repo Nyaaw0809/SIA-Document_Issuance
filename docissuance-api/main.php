@@ -24,14 +24,28 @@
 				case 'showtoken':
 					echo $auth->showToken();
 				break;
-
-				case 'getbooks':
+          //SELECT
+				case 'getrecords':
 					if (count($req) > 1) {
-						echo json_encode($gm->select("SELECT * FROM book", $req[1]), JSON_PRETTY_PRINT);
+						echo json_encode($gm->select("DocIssuance_issuedDocs", $req[1]), JSON_PRETTY_PRINT);
 					} else {
-						echo json_encode($gm->select("SELECT * FROM book", null), JSON_PRETTY_PRINT);
+						echo json_encode($gm->select("DocIssuance_issuedDocs", null), JSON_PRETTY_PRINT);
 					}
 				break;
+          //INSERT
+				case 'newrecord':
+					$d = json_decode(file_get_contents("php://input"));
+					// $d = json_decode('{ "lastname": "afdsa", "firstname": "QWER", "middlename": "asdasd", "housenum": "adsf", "street": "fasdfa", "purpose": "fasdfa" }');
+					echo json_encode($gm->insert("DocIssuance_issuedDocs", $d), JSON_PRETTY_PRINT);
+				break;
+          //UPDATE
+        case 'updaterecord':
+					//$d = json_decode(file_get_contents("php://input"));
+					$d = json_decode('{"author":"Johncel","title":"Baby ko si Kulot","genre":"Music","price":400}');
+					echo json_encode($gm->update("DocIssuance_issuedDocs", $d, "id=501"), JSON_PRETTY_PRINT);
+				break;
+         //DELETE??
+
 
 			}
 		break;

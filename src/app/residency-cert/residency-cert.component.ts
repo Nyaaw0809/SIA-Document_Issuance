@@ -19,8 +19,8 @@ export class ResidencyCertComponent {
     address: [null, Validators.required]
   });
 
-  
-  residentModel = new Residency('Uson','Ayn','Viloria','221','Paguio');
+
+  residentModel = new Residency('','','','','');
 
   //To document preview
   onSubmit(){

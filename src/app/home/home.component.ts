@@ -7,6 +7,8 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { ChartType, ChartOptions,ChartDataSets } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip,Color } from 'ng2-charts';
 import {DocumentService} from '../document.service';
+import { Book } from '../book.model';
+import { Record } from '../record.model';
 
 
 @Component({
@@ -16,16 +18,14 @@ import {DocumentService} from '../document.service';
 })
 export class HomeComponent {
   token:string;
-
+  books: Book[] = [];
+  books$: any;
+  record: Record[] = [];
 
   ngOnInit(){
+    //Shows database content
     return this.document.getToken()
-    .subscribe((data)=>{
-      this.token = JSON.stringify(data);
-      console.log(this.token);
-      console.log("get api data", data);
-    }
-    );
+    .subscribe(data=>{console.log(data);});
   }
   //Line Chart
   public lineChartData: ChartDataSets[] = [

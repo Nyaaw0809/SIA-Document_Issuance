@@ -3,6 +3,8 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import {HttpClient} from '@angular/common/http';
 import { ResidentRecord } from './resident-record';
 import { Observable } from 'rxjs';
+import { Book } from './book.model';
+import { Record } from './record.model';
 
 
 
@@ -10,12 +12,28 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DocumentService {
-  apiUrl = "http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/Z2V0Ym9va3M=";
+  apiUrlSelect = "http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/Z2V0cmVjb3Jkcw==";
+  apiUrlInsert = "http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/bmV3cmVjb3Jk";
+  apiUrlUpdate = "http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/dXBkYXRlcmVjb3Jk";
 
   getToken(){
-    return this._http.get(this.apiUrl);
+    //getRecords
+    return this._http.get<Record[]>(this.apiUrlSelect);
   }
 
+  newrecord: any={};
+  newRecord(data:any){
+    //notWorking pa
+   this.newrecord = JSON.stringify(data);
+    console.log(this.newrecord)
+    return <any>(this._http.get(this.apiUrlInsert,this.newrecord));
+  }
+
+
+
+  getBooks(){
+    return this._http.get<Book[]>(this.apiUrlSelect);
+  }
   private lastName = new BehaviorSubject<string>("");
   private firstName = new BehaviorSubject<string>("");
   private midName = new BehaviorSubject<string>("");

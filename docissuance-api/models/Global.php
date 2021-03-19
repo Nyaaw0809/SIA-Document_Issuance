@@ -7,25 +7,24 @@
 			$this->pdo = $pdo;
 		}
 
-		public function select($sql) { //for retrieve
-			$data = array();
-			$errmsg = "";
-			$code = 0;
+		public function select($table, $filter_data) {
+			$sql = "SELECT * FROM $table ";
 
+			if ($filter_data != null) {
+				$sql .= "WHERE pos_id = '$filter_data'";
+			}
+			$data = array(); $errmsg = ""; $code = 0;
 			try {
-				if($res = $this->pdo->query($sql)->fetchAll()) {
-					foreach($res as $rec) {
+				if ($res = $this->pdo->query($sql)->fetchAll()) {
+					foreach ($res as $rec) {
 						array_push($data, $rec);
+						$res = null; $code = 200;
 					}
-					$res = null;
-					$code = 200;
 				}
+			} catch(\PDOException $e) {
+				$errmsg = $e->getMessage(); $code = 401;
 			}
-			catch(\PDOException $e) {
-				$errmsg = $e->getMessage();
-				$code = 401;
-			}
-			return array("code"=>$code, "data"=>$data, "errmsg"=>$errmsg);
+			return $this->sendPayload($data, "success", $errmsg, $code);
 		}
 
 		public function insert($table, $data) {
@@ -34,6 +33,7 @@
 			$values=[];
 
 			foreach($data as $key => $value) {
+
 				array_push($fields, $key);
 				array_push($values, $value);
 			}
@@ -50,7 +50,7 @@
 				$sqlstr.=") VALUES (".str_repeat("?, ", count($values)-1)."?)";
 				$sql = $this->pdo->prepare($sqlstr);
 				$sql->execute($values);
-				return array("code"=>200, "remarks"=>"success");
+				return $this->select("$table", null);
 			}
 			catch(\PDOException $e) {
 				$errmsg = $e->getMessage();

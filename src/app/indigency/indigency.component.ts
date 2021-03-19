@@ -38,7 +38,7 @@ export class IndigencyComponent {
   ];
 
 
-  residentModel = new Indigency('Uson','Ayn','Viloria','21','Male','Single');
+  residentModel = new Indigency('','','','','','');
 
 //To document preview
   onSubmit(){

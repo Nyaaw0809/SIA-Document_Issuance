@@ -2,20 +2,19 @@
 	header("Access-Control-Allow-Origin: *");
 	header("Content-Type: application/json; charset=utf-8");
 	header("Access-Control-Allow-Methods: POST");
-	// header("Access-Control-Max-Age: 3600");
+	header("Access-Control-Max-Age: 3600");
 	// header("Access-Control-Allow-Headers: Content-Type,
 	// 	Access-Control-Allow-Headers, Authorization, X-Requested-With,
 	// 	X-Auth-User");
 
 	// date_default_timezone_get("Asia/Manila");
-	// set_time_limit(1000);
+	set_time_limit(1000);
+  include_once('./models/Auth.php');
+  include_once('./models/Get.php');
+  include_once('./models/Global.php');
+  include_once('./models/Post.php');
 
-	require_once("./models/Global.php");
-	require_once("./models/Auth.php");
-	require_once("./models/Get.php");
-	require_once("./models/Post.php");
-
-	define("DBASE", "books");
+	define("DBASE", "test_docissuance");
 	define("USER", "root");
 	define("PW", "");
 	define("SERVER", "localhost");
