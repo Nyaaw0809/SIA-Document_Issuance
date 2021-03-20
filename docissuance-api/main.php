@@ -33,8 +33,6 @@
 					}
 				break;
           //INSERT
-
-
 			}
 		break;
     case 'POST':
@@ -43,8 +41,6 @@
           //INSERT
 				case 'newrecord':
 					$d = json_decode(file_get_contents("php://input"));
-					// $d = json_decode('{ "lastname": "afdsa", "firstname": "QWER", "middlename": "asdasd", "housenum": "adsf", "street": "fasdfa", "purpose": "fasdfa" }');
-
 					echo json_encode($gm->insert("DocIssuance_issuedDocs", $d), JSON_PRETTY_PRINT);
           return array("data"=>$d);
 				break;
@@ -55,8 +51,6 @@
 					echo json_encode($gm->update("DocIssuance_issuedDocs", $d, "id=501"), JSON_PRETTY_PRINT);
 				break;
          //DELETE??
-
-
 			}
 		break;
 

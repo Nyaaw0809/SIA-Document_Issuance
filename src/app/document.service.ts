@@ -13,29 +13,24 @@ import { Record } from './record.model';
 })
 export class DocumentService {
   apiUrlSelect = "http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/Z2V0cmVjb3Jkcw==";
-  apiUrlInsert = "http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/bmV3cmVjb3Jk";
   apiUrlUpdate = "http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/dXBkYXRlcmVjb3Jk";
+  baseUrl="http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/";
+  // convert decrypt endpoints btoa
 
-  getToken(){
+  getRecords(endpoint: any){
     //getRecords
-    return this._http.get<Record[]>(this.apiUrlSelect);
+    return this._http.get<Record[]>(this.baseUrl + endpoint);
   }
 
   newrecord: any={};
-  newRecord(data:any){
-    //notWorking pa
+
+  newRecord(endpoint:any, data:any){
    this.newrecord = JSON.stringify(data);
-   console.log("Raw: ",(data));
-    console.log("Stringify: ",JSON.stringify(data));
-
-    return <any>(this._http.post(this.apiUrlInsert, JSON.stringify(data)));
+    return <any>(this._http.post(this.baseUrl + endpoint, JSON.stringify(data)));
   }
 
 
 
-  getBooks(){
-    return this._http.get<Book[]>(this.apiUrlSelect);
-  }
   private lastName = new BehaviorSubject<string>("");
   private firstName = new BehaviorSubject<string>("");
   private midName = new BehaviorSubject<string>("");
@@ -57,12 +52,9 @@ export class DocumentService {
   currentGender = this.gender.asObservable();
   currentStatus = this.status.asObservable();
 
-
-
-
-  // _url = ''
   constructor(private _http: HttpClient) { }
 
+  //pass form values to components
   changeMessage(lastn: string,firstn: string,midn: string,houseN: string,street: string,purpose: string,brgy: string){
     this.lastName.next(lastn);
     this.firstName.next(firstn);
@@ -72,7 +64,7 @@ export class DocumentService {
     this.purpose.next(purpose);
     this.brgy.next(brgy);
   }
-
+//pass form values to components
   changeMessageIndigency(lastn: string,firstn: string,midn: string,age: string,gender: string,status: string){
     this.lastName.next(lastn);
     this.firstName.next(firstn);
@@ -81,7 +73,7 @@ export class DocumentService {
     this.gender.next(gender);
     this.status.next(status);
   }
-
+//pass form values to components
   changeMessageResidency(lastn: string,firstn: string,midn: string,houseN: string,street: string){
     this.lastName.next(lastn);
     this.firstName.next(firstn);
@@ -90,8 +82,5 @@ export class DocumentService {
     this.street.next(street);
   }
 
-  // pass(resRec: ResidentRecord){
-  //  return this._http.post<any>(this._url, resRec);
- // }
   }
 

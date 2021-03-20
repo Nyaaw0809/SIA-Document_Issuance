@@ -24,7 +24,7 @@ export class HomeComponent {
 
   ngOnInit(){
     //Shows database content
-    return this.document.getToken()
+    return this.document.getRecords(btoa("Z2V0cmVjb3Jkcw=="))
     .subscribe(data=>{console.log(data);});
   }
   //Line Chart

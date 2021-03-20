@@ -41,17 +41,19 @@ export class BrgyClearanceComponent {
   resident: any = {};
 //To document preview
   onSubmit(data){
-    //notWorking pa
     console.log(data);
-    this.document.newRecord(data).subscribe((data: any) =>{console.log(data);});
-
-
+    //select from res_tbl to verify if the resident has records, can create another select function sa global.php, or magreturn ng new variable sa payload na nirereturn ng basic select
+    //if so, proceed
+    // Fields to be inserted to tbl_docissuance issueddoc_id	res_id	payment_id	doc_type	doc_purpose	doc_date_issued
+    this.document.newRecord(btoa("newrecord"),data).subscribe((data: any) =>{console.log(data);});
+    this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose,this.residentModel.brgy);
+    this.router.navigate(["/brgyclearanceView"]);
+    //else alert "Not a resident"
 
     //Insert Record IssuedDocs_tbl and Payment_tbl
       // HERE
     //pass input value to service to another component
-    this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose,this.residentModel.brgy);
-    //this.router.navigate(["/brgyclearanceView"]);
+
 
   }
 
