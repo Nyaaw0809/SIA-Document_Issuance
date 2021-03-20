@@ -24,17 +24,18 @@
           <div class="navbar">
               <mat-toolbar class="blue-color">
                 <button mat-icon-button class="example-icon" (click)="isExpanded = !isExpanded" aria-label="Example icon-button with menu icon" mat-button (click)="drawer.toggle()">
-                  <mat-icon>menu</mat-icon>
+                  <mat-icon [ngStyle]="{'color': 'white'}">menu</mat-icon>
                 </button>
-                <h1 style="color: #ffffff">Document Issuance: Barangay Clearance</h1>
 
                 <span class="example-spacer"></span>
                 <button mat-icon-button (click)="logout()" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                  <mat-icon>logout</mat-icon>
+                  <mat-icon [ngStyle]="{'color': 'white'}">logout</mat-icon>
                 </button>
               </mat-toolbar>
+              <h1 class="title-system">Barangay Clearance</h1>
+              <hr>
           </div>
-
+<!--<fieldset>-->
       <form  #addForm='ngForm' novalidate (ngSubmit)="onSubmit()">
         <mat-card style="width: 90%;" class="shipping-card">
 
@@ -126,5 +127,6 @@
           </mat-card-actions>
         </mat-card>
       </form>
+    <!-- </fieldset> -->
 
   </mat-sidenav-container>
