@@ -25,8 +25,10 @@ export class DocumentService {
   newRecord(data:any){
     //notWorking pa
    this.newrecord = JSON.stringify(data);
-    console.log(this.newrecord)
-    return <any>(this._http.get(this.apiUrlInsert,this.newrecord));
+   console.log("Raw: ",(data));
+    console.log("Stringify: ",JSON.stringify(data));
+
+    return <any>(this._http.post(this.apiUrlInsert, JSON.stringify(data)));
   }
 
 

@@ -14,6 +14,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { BarangayClearancePdfComponent } from '../barangay-clearance-pdf/barangay-clearance-pdf.component';
 
 
+
 @Component({
   selector: 'app-brgy-clearance',
   templateUrl: './brgy-clearance.component.html',
@@ -39,10 +40,10 @@ export class BrgyClearanceComponent {
   }
   resident: any = {};
 //To document preview
-  onSubmit(){
+  onSubmit(data){
     //notWorking pa
-    console.log(this.residentModel);
-    this.document.newRecord(this.residentModel).subscribe((data: any) =>{console.log(data);});
+    console.log(data);
+    this.document.newRecord(data).subscribe((data: any) =>{console.log(data);});
 
 
 
@@ -50,7 +51,7 @@ export class BrgyClearanceComponent {
       // HERE
     //pass input value to service to another component
     this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose,this.residentModel.brgy);
-    this.router.navigate(["/brgyclearanceView"]);
+    //this.router.navigate(["/brgyclearanceView"]);
 
   }
 

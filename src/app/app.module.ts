@@ -30,6 +30,7 @@ import { IndigencyPdfComponent } from './indigency-pdf/indigency-pdf.component';
 import { ResidencyPdfComponent } from './residency-pdf/residency-pdf.component';
 import { DocumentRecordsComponent } from './document-records/document-records.component';
 import { ChartsModule } from 'ng2-charts';
+import {HttpClientModule} from '@angular/common/http'
 
 
 
@@ -62,7 +63,8 @@ import { ChartsModule } from 'ng2-charts';
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
-    ChartsModule
+    ChartsModule,
+    HttpClientModule
 
   ],
   providers: [],

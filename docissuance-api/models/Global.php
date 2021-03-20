@@ -56,7 +56,7 @@
 				$errmsg = $e->getMessage();
 				$code = 403;
 			}
-			return array("code"=>$code, "errmsg"=>$errmsg);
+			return array("code"=>$code, "errmsg"=>$errmsg, "data"=>$data, "values"=>$values);
 		}
 
 		public function update($table, $data, $conditionStringPassed) {

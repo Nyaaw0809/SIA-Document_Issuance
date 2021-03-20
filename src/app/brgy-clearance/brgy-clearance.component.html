@@ -35,7 +35,7 @@
               </mat-toolbar>
           </div>
 
-      <form  #addForm='ngForm' novalidate (ngSubmit)="onSubmit()">
+      <form  #addForm='ngForm' novalidate (ngSubmit)="onSubmit(addForm.value)">
         <mat-card style="width: 90%;" class="shipping-card">
 
             <h1 class="poppins-bold">Name</h1>
@@ -94,14 +94,14 @@
                     </mat-form-field>
                   </div>
 
-                  <div class="col">
+                  <!-- <div class="col">
                     <mat-form-field  appearance="outline">
                       <textarea matInput placeholder="Barangay" name="brgy" [(ngModel)]="residentModel.brgy"></textarea>
-                      <!-- <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
+                      <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
                         Address is <strong>required</strong>
-                      </mat-error> -->
+                      </mat-error>
                     </mat-form-field>
-                  </div>
+                  </div> -->
 
                 </div>
               </div>
