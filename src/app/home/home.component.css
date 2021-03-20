@@ -127,9 +127,9 @@ hr {
 }
 
 p {
-  float: right;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
+  text-align: center;
 }
 
 .poppins-bold {
@@ -280,24 +280,20 @@ mat-icon {
 }
 
 .sqCard {
+  margin-left: 65px;
   margin-right: 50px;
   width: 30%;
-  height: 300px;
-}
-
-.sqCard {
-  margin-right: 50px;
-  width: 30%;
+  height: 180px;
   color: white;
   font-size: 45px;
   font-weight: bold;
-  height: 200px;
   background-color: #ffc107;
 }
+
 .sqCard1 {
   margin-right: 50px;
   width: 30%;
-  height: 200px;
+  height: 180px;
   color: white;
   font-size: 45px;
   font-weight: bold;
@@ -306,7 +302,7 @@ mat-icon {
 .sqCard2 {
   margin-right: 50px;
   width: 30%;
-  height: 200px;
+  height: 180px;
   color: white;
   font-size: 45px;
   font-weight: bold;
@@ -320,5 +316,5 @@ mat-icon {
 .bgrCard {
   margin-right: 30px;
   width: 50%;
-  height: 450px;
+  height: 310px;
 }
