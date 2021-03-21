@@ -1,40 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-
+import {DocumentService} from '../document.service';
 import { Router } from '@angular/router';
 import { MatSidenav } from '@angular/material/sidenav';
 import {MatTableDataSource} from '@angular/material/table';
-export interface Records {
-  name: string;
-  position: number;
-  weight: string;
-  symbol: string;
-}
-
-const ELEMENT_DATA: Records[] = [
-  {position: 1, name: 'Johncel Gonzaga', weight: 'Barangay Clearance', symbol: 'School'},
-  {position: 2, name: 'Allen Uy', weight: 'Certificate of Indigency', symbol: 'School'},
-  {position: 3, name: 'Ranny Edejer', weight: 'Certificate of Indigency', symbol: 'Job Application'},
-  {position: 4, name: 'Ayn Uson', weight: 'Barangay Clearance', symbol: 'School'},
-  {position: 5, name: 'Mitchell Alop', weight: 'Certificate of Indigency', symbol: 'Job Application'},
-  {position: 6, name: 'Ryunosuke Fujii', weight: 'Certificate of Indigency', symbol: 'School'},
-  {position: 7, name: 'Austin Aranda', weight: 'Barangay Clearance', symbol: 'School'},
-  {position: 8, name: 'Mark Fabro', weight: 'Certificate of Indigency', symbol: 'Job Application'},
-  {position: 9, name: 'Levi Ackerman', weight: 'Certificate of Indigency', symbol: 'School'},
-  {position: 10, name: 'Eren Yeager', weight: 'Barangay Clearance', symbol: 'Job Application'},
-];
+import { Record } from '../record.model';
 
 @Component({
   selector: 'app-document-records',
   templateUrl: './document-records.component.html',
   styleUrls: ['./document-records.component.css']
 })
-export class DocumentRecordsComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+export class DocumentRecordsComponent implements OnInit{
+  ELEMENT_DATA: Record[] = [];
+  displayedColumns: string[] = ['id', 'lastName', 'firstName', 'middleName', 'houseNum', 'street', 'purpose'];
+  dataSource = new MatTableDataSource<Record>(this.ELEMENT_DATA);
 
-  constructor(private breakpointObserver: BreakpointObserver, public router : Router) { }
+
+  records: any;
+
+  ngOnInit() {
+    this.getRecords();
+  }
+
+  public getRecords(){
+    //on dev pa, display the pulled data to table
+    this.document.getRecords(btoa("getrecords"))
+    .subscribe(result=>{this.dataSource.data=result;
+    console.log(result)});
+  }
+
+
+  constructor(private breakpointObserver: BreakpointObserver, public router : Router, private document : DocumentService) { }
 
   sidenav: MatSidenav;
   isExpanded = true;
@@ -59,8 +57,7 @@ export class DocumentRecordsComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  ngOnInit(): void {
-  }
+
 
   isSidebarOpen=true;
 

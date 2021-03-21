@@ -1,5 +1,5 @@
 
-export class Record
+export interface Record
 {
   id: number;
   lastName: string;

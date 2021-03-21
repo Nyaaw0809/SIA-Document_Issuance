@@ -24,7 +24,7 @@
 			} catch(\PDOException $e) {
 				$errmsg = $e->getMessage(); $code = 401;
 			}
-			return $this->sendPayload($data, "success", $errmsg, $code);
+			return $this->sendPayload($data, "success", $errmsg, $code,$table);
 		}
 
 		public function insert($table, $data) {

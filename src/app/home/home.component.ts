@@ -8,7 +8,6 @@ import { ChartType, ChartOptions,ChartDataSets } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip,Color } from 'ng2-charts';
 import {DocumentService} from '../document.service';
 import { Book } from '../book.model';
-import { Record } from '../record.model';
 
 
 @Component({
@@ -18,13 +17,10 @@ import { Record } from '../record.model';
 })
 export class HomeComponent {
   token:string;
-  books: Book[] = [];
-  books$: any;
-  record: Record[] = [];
 
   ngOnInit(){
     //Shows database content
-    return this.document.getRecords(btoa("Z2V0cmVjb3Jkcw=="))
+    return this.document.getRecords(btoa("getrecords"))
     .subscribe(data=>{console.log(data);});
   }
   //Line Chart

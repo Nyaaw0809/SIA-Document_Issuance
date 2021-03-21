@@ -12,14 +12,13 @@ import { Record } from './record.model';
   providedIn: 'root'
 })
 export class DocumentService {
-  apiUrlSelect = "http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/Z2V0cmVjb3Jkcw==";
-  apiUrlUpdate = "http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/dXBkYXRlcmVjb3Jk";
+  
   baseUrl="http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/";
   // convert decrypt endpoints btoa
 
   getRecords(endpoint: any){
     //getRecords
-    return this._http.get<Record[]>(this.baseUrl + endpoint);
+    return this._http.post<Record[]>(this.baseUrl + endpoint,"");
   }
 
   newrecord: any={};
