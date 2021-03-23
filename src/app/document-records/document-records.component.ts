@@ -7,6 +7,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import {MatTableDataSource} from '@angular/material/table';
 import { Record } from '../record.model';
 
+
 @Component({
   selector: 'app-document-records',
   templateUrl: './document-records.component.html',
@@ -28,7 +29,9 @@ export class DocumentRecordsComponent implements OnInit{
     //on dev pa, display the pulled data to table
     this.document.getRecords(btoa("getrecords"))
     .subscribe(result=>{this.dataSource.data=result;
-    console.log(result)});
+    console.log(result)
+      console.log(this.dataSource.data)
+  });
   }
 
 
