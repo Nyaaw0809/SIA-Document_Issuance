@@ -6,31 +6,49 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 import { DocumentService } from '../document.service';
 import { Residency } from '../residency';
+
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-residency-cert',
   templateUrl: './residency-cert.component.html',
   styleUrls: ['./residency-cert.component.css']
 })
 export class ResidencyCertComponent {
-  addressForm = this.fb.group({
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    midName: [null, Validators.required],
-    address: [null, Validators.required]
-  });
-
+  isValid: boolean;
 
   residentModel = new Residency('','','','','');
 
   //To document preview
   onSubmit(){
-    //Insert Record IssuedDocs_tbl and Payment_tbl
+    //Insert Record IssuedDocs_tbl and Payment_tbl ?? PENDING BECAUSE NO FINAL DB
       // HERE
+      this.inputCheck();
+      if (this.isValid){
+        //insert to db???
+        
+        //pass input value to service to another component
+        this.document.changeMessageResidency(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street);
+        Swal.fire({
+          title: 'Success!',
+          text: "Document generated!",
+          icon: 'success',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'View Document'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.router.navigate(["/residencyView"]);
+          }
+        })
+
+      }else{
+        Swal.fire(
+          'Missing fields!',
+          'Fill all the fields.',
+          'warning'
+        )
+      }
 
 
-    //pass input value to service to another component
-    this.document.changeMessageResidency(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street);
-    this.router.navigate(["/residencyView"]);
 
   }
 
@@ -45,6 +63,18 @@ export class ResidencyCertComponent {
     {name: 'California', abbreviation: 'CA'}
   ];
 
+  inputCheck(){
+    if(this.residentModel.firstName && this.residentModel.lastName && this.residentModel.midName && this.residentModel.houseNum && this.residentModel.street ){
+      this.isValid = true;
+    }else{
+      this.isValid = false;
+    }
+  }
+
+
+
+
+  //SIDENAV
   sidenav: MatSidenav;
   isExpanded = true;
   showSubmenu: boolean = false;

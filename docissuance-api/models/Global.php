@@ -94,14 +94,15 @@
 		public function sendPayload($payload, $remarks, $message, $code) {
 			$status = array("remarks"=>$remarks, "message"=>$message);
 			http_response_code($code);
-			return $payload;
-
+			// return  array(
+			// 	"status"=>$status,
+			// 	"payload"=>$payload,
+			// 	"timestamp"=>date_create());
+      return $payload;
 
       //Cinomment ko muna para magmatch ung ginagamit na data ng table sa documentation,
       //Andami kasing binabato na data nitong payload. di ko alam kung pano specific lang na part ung gagalawin TY
-      //"payload"=>
-      //"status"=>$status,
-      //"timestamp"=>date_create()
+
 		}
 	}
 ?>

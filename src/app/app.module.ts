@@ -31,6 +31,7 @@ import { ResidencyPdfComponent } from './residency-pdf/residency-pdf.component';
 import { DocumentRecordsComponent } from './document-records/document-records.component';
 import { ChartsModule } from 'ng2-charts';
 import {HttpClientModule} from '@angular/common/http'
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -64,7 +65,8 @@ import {HttpClientModule} from '@angular/common/http'
     MatCardModule,
     ReactiveFormsModule,
     ChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule
 
   ],
   providers: [],

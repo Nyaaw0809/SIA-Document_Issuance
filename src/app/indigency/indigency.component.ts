@@ -6,22 +6,14 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 import { DocumentService } from '../document.service';
 import { Indigency } from '../indigency';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-indigency',
   templateUrl: './indigency.component.html',
   styleUrls: ['./indigency.component.css']
 })
 export class IndigencyComponent {
-  addressForm = this.fb.group({
-
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    midName: [null, Validators.required],
-    gender: [null, Validators.required],
-    age: [null, Validators.required],
-    status: [null, Validators.required]
-  });
+  isValid: boolean;
 
   hasUnitNumber = false;
 
@@ -42,16 +34,49 @@ export class IndigencyComponent {
 
 //To document preview
   onSubmit(){
-    //Insert Record IssuedDocs_tbl and Payment_tbl
+    //Insert Record IssuedDocs_tbl and Payment_tbl ?? PENDING BECAUSE NO FINAL DB
       // HERE
+      this.inputCheck();
+      if (this.isValid){
+        //insert to db???
 
+        //pass input value to service to another component
+        this.document.changeMessageIndigency(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.age,this.residentModel.gender,this.residentModel.status);
+        Swal.fire({
+          title: 'Success!',
+          text: "Document generated!",
+          icon: 'success',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'View Document'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.router.navigate(["/indigencyView"]);
+          }
+        })
 
-    //pass input value to service to another component
-    this.document.changeMessageIndigency(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.age,this.residentModel.gender,this.residentModel.status);
-    this.router.navigate(["/indigencyView"]);
+      }else{
+        Swal.fire(
+          'Missing fields!',
+          'Fill all the fields.',
+          'warning'
+        )
+      }
+
 
   }
 
+  inputCheck(){
+    if(this.residentModel.firstName && this.residentModel.lastName && this.residentModel.age && this.residentModel.gender && this.residentModel.midName && this.residentModel.status){
+      this.isValid = true;
+    }else{
+      this.isValid = false;
+    }
+  }
+
+
+
+
+  // SIDENAV
   sidenav: MatSidenav;
   isExpanded = true;
   showSubmenu: boolean = false;

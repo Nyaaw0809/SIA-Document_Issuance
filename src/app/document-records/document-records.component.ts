@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import {DocumentService} from '../document.service';
@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { MatSidenav } from '@angular/material/sidenav';
 import {MatTableDataSource} from '@angular/material/table';
 import { Record } from '../record.model';
+import {MatPaginator} from '@angular/material/paginator';
 
 
 @Component({
@@ -19,16 +20,19 @@ export class DocumentRecordsComponent implements OnInit{
   dataSource = new MatTableDataSource<Record>(this.ELEMENT_DATA);
 
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   records: any;
 
   ngOnInit() {
     this.getRecords();
+
   }
 
   public getRecords(){
     //on dev pa, display the pulled data to table
     this.document.getRecords(btoa("getrecords"))
     .subscribe(result=>{this.dataSource.data=result;
+      this.dataSource.paginator= this.paginator;
     console.log(result)
       console.log(this.dataSource.data)
   });

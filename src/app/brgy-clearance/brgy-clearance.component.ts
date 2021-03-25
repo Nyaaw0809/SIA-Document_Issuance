@@ -1,7 +1,4 @@
 import { Component, OnInit ,Inject } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
 
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,7 +8,7 @@ import { DocumentService } from '../document.service';
 import { ResidentRecord } from '../resident-record';
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { BarangayClearancePdfComponent } from '../barangay-clearance-pdf/barangay-clearance-pdf.component';
+import Swal from 'sweetalert2'
 
 
 
@@ -21,41 +18,66 @@ import { BarangayClearancePdfComponent } from '../barangay-clearance-pdf/baranga
   styleUrls: ['./brgy-clearance.component.css']
 })
 export class BrgyClearanceComponent {
-  // addressForm = this.fb.group({
-  //   firstName: [null, Validators.required],
-  //   lastName: [null, Validators.required],
-  //   midName: [null, Validators.required],
-  //   address: [null, Validators.required],
-  //   purpose: [null, Validators.required]
-  // });
-
-//services
-  message: any[];
-
 
   residentModel = new ResidentRecord('','','','','','','');
-
+  isValid: boolean;
   ngOnInit() {
 
   }
   resident: any = {};
 //To document preview
   onSubmit(data){
-    console.log(data);
+    // add na lang ung barangay field pag may final db na
+    this.inputCheck();
+    if (this.isValid){
+      //insert to db
+      this.document.newRecord(btoa("newrecord"),data).subscribe((data: any) =>{console.log(data);});
+      this.residentModel.brgy="Barangay Cabalan";
+      //pass input value to service to another component
+      this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose,this.residentModel.brgy);
+      Swal.fire({
+        title: 'Success!',
+        text: "Document generated!",
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'View Document'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigate(["/brgyclearanceView"]);
+        }
+      })
+
+    }else{
+      Swal.fire(
+        'Missing fields!',
+        'Fill all the fields.',
+        'warning'
+      )
+    }
+  }
+
     //select from res_tbl to verify if the resident has records, can create another select function sa global.php, or magreturn ng new variable sa payload na nirereturn ng basic select
     //if so, proceed
     // Fields to be inserted to tbl_docissuance issueddoc_id	res_id	payment_id	doc_type	doc_purpose	doc_date_issued
-    this.document.newRecord(btoa("newrecord"),data).subscribe((data: any) =>{console.log(data);});
-    this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose,this.residentModel.brgy);
-    this.router.navigate(["/brgyclearanceView"]);
+
+
     //else alert "Not a resident"
 
     //Insert Record IssuedDocs_tbl and Payment_tbl
       // HERE
-    //pass input value to service to another component
 
 
+
+
+  //Chekck field values
+  inputCheck(){
+    if(this.residentModel.firstName && this.residentModel.lastName && this.residentModel.houseNum && this.residentModel.street && this.residentModel.midName && this.residentModel.purpose){
+      this.isValid = true;
+    }else{
+      this.isValid = false;
+    }
   }
+
 
   hasUnitNumber = false;
 
@@ -84,20 +106,6 @@ export class BrgyClearanceComponent {
     }
   }
   constructor(private fb: FormBuilder,public router : Router, private document : DocumentService,public dialog: MatDialog) {}
-
-  // onSubmit(): void {
-  //   const dialogRef = this.dialog.open(BarangayClearancePdfComponent, {
-  //     width: '1240px',
-  //     height: '1754px',
-  //     data: {lastname: this.residentModel.lastName, firstname: this.residentModel.firstName}
-  //   });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('The dialog was closed');
-  //     this.residentModel.lastName = result;
-  //   });
-  //   console.log(this.residentModel)
-  // }
 
 
   isSidebarOpen=true;
