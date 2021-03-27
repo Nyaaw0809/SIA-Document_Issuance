@@ -16,7 +16,7 @@ import {MatPaginator} from '@angular/material/paginator';
 })
 export class DocumentRecordsComponent implements OnInit{
   ELEMENT_DATA: any[] = [];
-  displayedColumns: string[] = ['id', 'lastName', 'firstName', 'middleName', 'houseNum', 'street', 'purpose','action'];
+  displayedColumns: string[] = ['id', 'lastName', 'firstName',  'middleName', 'doctype', 'houseNum', 'street', 'purpose','action'];
   dataSource = new MatTableDataSource<any>(this.ELEMENT_DATA);
 
 
@@ -29,7 +29,6 @@ export class DocumentRecordsComponent implements OnInit{
   }
 
   public getRecords(){
-    //on dev pa, display the pulled data to table
     this.document.getRecords(btoa("getrecords"))
     .subscribe(result=>{this.dataSource.data=result;
       this.dataSource.paginator= this.paginator;

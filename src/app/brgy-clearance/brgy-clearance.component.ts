@@ -20,7 +20,10 @@ import Swal from 'sweetalert2'
 export class BrgyClearanceComponent {
 
   residentModel = new ResidentRecord('','','','','','','');
-  isValid: boolean;
+  isValid: boolean = false;
+  isResident: boolean = false;
+  valToCheck: any;
+  condition: string;
   ngOnInit() {
 
   }
@@ -31,10 +34,14 @@ export class BrgyClearanceComponent {
     this.inputCheck();
     if (this.isValid){
       //insert to db
-      this.document.newRecord(btoa("newrecord"),data).subscribe((data: any) =>{console.log(data);});
+      // this.document.newRecord(btoa("newrecord"),data).subscribe((data: any) =>{console.log(data);});
       this.residentModel.brgy="Barangay Cabalan";
       //pass input value to service to another component
+
       this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose,this.residentModel.brgy);
+
+
+
       Swal.fire({
         title: 'Success!',
         text: "Document generated!",
@@ -53,6 +60,12 @@ export class BrgyClearanceComponent {
         'Fill all the fields.',
         'warning'
       )
+    //   this.condition = "WHERE res_fname='"+this.residentModel.lastName+"' AND res_fname='"+ this.residentModel.firstName+ "' AND res_mname='"+ this.residentModel.midName+ "'"
+    //   this.document.getRecords(btoa("checkres"))
+    //   .subscribe(result=>{
+    //       this.valToCheck = result;
+    //       console.log(this.valToCheck);
+    // });
     }
   }
 
@@ -63,7 +76,7 @@ export class BrgyClearanceComponent {
 
     //else alert "Not a resident"
 
-    //Insert Record IssuedDocs_tbl and Payment_tbl
+    //Insert Record IssuedDocs_tbl, transac_tbl and Payment_tbl
       // HERE
 
 

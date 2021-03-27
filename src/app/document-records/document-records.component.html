@@ -56,47 +56,58 @@
         <!-- Position Column -->
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> Document ID </th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.doc_id}} </td>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="lastName">
           <th mat-header-cell *matHeaderCellDef> Last name </th>
-          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.res_lname}} </td>
         </ng-container>
 
         <!-- Weight Column -->
         <ng-container matColumnDef="firstName">
           <th mat-header-cell *matHeaderCellDef> First name </th>
-          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.res_fname}} </td>
         </ng-container>
 
         <!-- Symbol Column -->
         <ng-container matColumnDef="middleName">
           <th mat-header-cell *matHeaderCellDef> Middle name </th>
-          <td mat-cell *matCellDef="let element"> {{element.middleName}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.res_mname}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="doctype">
+          <th mat-header-cell *matHeaderCellDef> Document Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.doc_type}} </td>
         </ng-container>
 
         <ng-container matColumnDef="houseNum">
           <th mat-header-cell *matHeaderCellDef> House num </th>
-          <td mat-cell *matCellDef="let element"> {{element.houseNum}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.res_housenum}} </td>
         </ng-container>
 
         <ng-container matColumnDef="street">
-          <th mat-header-cell *matHeaderCellDef> street </th>
-          <td mat-cell *matCellDef="let element"> {{element.street}} </td>
+          <th mat-header-cell *matHeaderCellDef> Street </th>
+          <td mat-cell *matCellDef="let element"> {{element.res_street}} </td>
         </ng-container>
 
         <ng-container matColumnDef="purpose">
           <th mat-header-cell *matHeaderCellDef> Purpose </th>
-          <td mat-cell *matCellDef="let element"> {{element.purpose}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.doc_purpose}} </td>
         </ng-container>
 
         <ng-container matColumnDef="action">
           <th mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let row">
-            <button style="margin-right:10px;" mat-fab color="accent"><mat-icon>visibility</mat-icon></button>
-             <button mat-fab color="secondary"><mat-icon>edit</mat-icon></button>
+            <div style="display: flex;
+                        justify-content: center;
+                        align-items: center;
+          ">
+              <button style="margin-right:20px;" mat-fab color="accent"><mat-icon>visibility</mat-icon></button>
+              <button mat-fab color="secondary"><mat-icon>edit</mat-icon></button>
+            </div>
+
           </td>
           <!-- <td mat-cell *matCellDef="let element"> {{element.actions}} </td> -->
         </ng-container>

@@ -12,13 +12,21 @@ import { Record } from './record.model';
   providedIn: 'root'
 })
 export class DocumentService {
-  
+
   baseUrl="http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/";
   // convert decrypt endpoints btoa
 
-  getRecords(endpoint: any){
+  getRecords(endpoint: any, condition?: any){
     //getRecords
-    return this._http.post<Record[]>(this.baseUrl + endpoint,"");
+    return this._http.post<any[]>(this.baseUrl + endpoint, condition);
+  }
+
+
+  check(endpoint: any,table:any, condition?: any){
+    //getRecords
+    table = btoa(table);
+    condition = btoa(condition)
+    return this._http.post<any[]>(this.baseUrl + endpoint, (table), (condition));
   }
 
   newrecord: any={};

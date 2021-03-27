@@ -14,7 +14,7 @@
   include_once('./models/Global.php');
   include_once('./models/Post.php');
 
-	define("DBASE", "test_docissuance");
+	define("DBASE", "db_barangay_management");
 	define("USER", "root");
 	define("PW", "");
 	define("SERVER", "localhost");

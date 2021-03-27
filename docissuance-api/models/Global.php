@@ -11,7 +11,7 @@
 			$sql = "SELECT * FROM $table ";
 
 			if ($filter_data != null) {
-				$sql .= "WHERE pos_id = '$filter_data'";
+				$sql .= " '$filter_data'";
 			}
 			$data = array(); $errmsg = ""; $code = 0;
 			try {
