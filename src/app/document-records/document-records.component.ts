@@ -15,9 +15,9 @@ import {MatPaginator} from '@angular/material/paginator';
   styleUrls: ['./document-records.component.css']
 })
 export class DocumentRecordsComponent implements OnInit{
-  ELEMENT_DATA: Record[] = [];
-  displayedColumns: string[] = ['id', 'lastName', 'firstName', 'middleName', 'houseNum', 'street', 'purpose'];
-  dataSource = new MatTableDataSource<Record>(this.ELEMENT_DATA);
+  ELEMENT_DATA: any[] = [];
+  displayedColumns: string[] = ['id', 'lastName', 'firstName', 'middleName', 'houseNum', 'street', 'purpose','action'];
+  dataSource = new MatTableDataSource<any>(this.ELEMENT_DATA);
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

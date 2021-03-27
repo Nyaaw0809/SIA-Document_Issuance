@@ -4,14 +4,14 @@
   <!-- SIDENAV -->
   <mat-sidenav-container autosize>
 
-      <mat-sidenav #drawer mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+      <mat-sidenav #drawer mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()" class="mat-sidenav-style">
               <img class="user-profile" src="/assets/avatar1.png">
               <h2 style="color: #020101">ADMIN</h2>
               <mat-divider [vertical]="false"></mat-divider>
-          <button mat-button class="sidebarcontent" routerLink="/home" routerLinkActive="selected"><mat-icon style="margin-left: -38px; margin-right: 5px;" class="sidenavBtn">dashboard</mat-icon>Dashboard</button><br>
-          <button mat-button class="sidebarcontent" routerLink="/documentRecords" ><mat-icon style="margin-left: -38px; margin-right: 5px;" class="sidenavBtn">dashboard</mat-icon> Issued Documents</button><br>
+          <button mat-button class="sidebarcontent" routerLink="/home" routerLinkActive="selected"><mat-icon  class="sidenavBtn">dashboard</mat-icon>Dashboard</button><br>
+          <button mat-button class="sidebarcontent" routerLink="/documentRecords" ><mat-icon class="sidenavBtn">table_chart</mat-icon> Issued Documents</button><br>
 
-          <h3 style="color: #020101">Documents</h3><br>
+          <h3 style="color: #201212">Documents</h3><br>
               <mat-divider [vertical]="false"></mat-divider>
           <button mat-button class="sidebarcontent" routerLink="/brgy-clearance" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Barangay Clearance</button><br>
           <button mat-button class="sidebarcontent" routerLink="/indigency" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Certificate of Indigency</button><br>
