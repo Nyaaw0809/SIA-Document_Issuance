@@ -1,35 +1,64 @@
-
 mat-card {
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-  height:1754px;
+  height: 1754px;
+}
+h1 {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 2.5px;
 }
 
-h1{
+h2,
+h3 {
   text-align: center;
+  font-family: "Times New Roman", Times, serif;
 }
-.container{
+
+.seal {
+  height: 170px;
+  float: left;
+}
+.seal2 {
+  height: 170px;
+  float: right;
+}
+#brgy {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+.container {
   display: flex;
+  line-height: 200%;
+  text-align: justify;
+  text-justify: inter-word;
 }
-.leftside{
-  padding: 0px 10px 0px 25px ;
+.closingnote {
+  float: right;
+}
+.leftside {
+  padding: 0px 10px 0px 25px;
   width: 20%;
   border-right-style: solid;
   border-left-color: black;
 }
 
-.rightside{
-
+.rightside {
   margin-left: auto;
   margin-right: auto;
   width: 65%;
 }
 
-.butCon{
+.butCon {
   position: absolute;
   right: 0;
 }
-

@@ -14,6 +14,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 })
 export class ResidencyPdfComponent implements OnInit {
 
+  myDate = Date.now();
   lastn: string;
   firstn: string;
   midn: string;
