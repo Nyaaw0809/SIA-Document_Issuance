@@ -5,6 +5,7 @@ export class Indigency {
     public midName: string,
     public age: string,
     public gender: string,
-    public status:string
+    public status:string,
+    public purpose:string
 ){}
 }

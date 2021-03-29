@@ -20,8 +20,6 @@
           <button mat-button class="sidebarcontent"  routerLink="/residency" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Certificate of Residency</button><br>
       </mat-sidenav>
 
-      <mat-sidenav-content>
-
           <div class="navbar">
               <mat-toolbar class="blue-color">
                 <button mat-icon-button class="example-icon" (click)="isExpanded = !isExpanded" aria-label="Example icon-button with menu icon" mat-button (click)="drawer.toggle()">
@@ -117,11 +115,26 @@
                     </div>
 
                   </div>
+
+                <h1 class="poppins-bold">Purpose</h1>
+              <div class="zontaline"></div>
+              <div class="otherdetails">
+                <div class="row">
+                  <div class="col">
+
+                    <mat-form-field  appearance="outline" class="full-width" >
+                      <input matInput placeholder="Purpose" name="purpose" [(ngModel)]="residentModel.purpose">
+                      <!-- <mat-error *ngIf="addressForm.controls['purpose'].hasError('required')">
+                        Purpose is <strong>required</strong>
+                      </mat-error> -->
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
                 <mat-card-actions>
                   <button mat-raised-button color="primary" type="submit">Generate</button>
                 </mat-card-actions>
               </mat-card>
             </form>
-
-          </mat-sidenav-content>
         </mat-sidenav-container>

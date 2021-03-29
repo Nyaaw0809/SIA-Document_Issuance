@@ -4,6 +4,7 @@ export class Residency {
     public firstName: string,
     public midName: string,
     public houseNum: string,
-    public street: string
+    public street: string,
+    public purpose: string
 ){}
 }

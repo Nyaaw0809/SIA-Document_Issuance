@@ -16,7 +16,7 @@ import Swal from 'sweetalert2'
 export class ResidencyCertComponent {
   isValid: boolean;
 
-  residentModel = new Residency('','','','','');
+  residentModel = new Residency('','','','','','');
 
   //To document preview
   onSubmit(){
@@ -27,7 +27,7 @@ export class ResidencyCertComponent {
         //insert to db???
         
         //pass input value to service to another component
-        this.document.changeMessageResidency(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street);
+        this.document.changeMessageResidency(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street, this.residentModel.purpose);
         Swal.fire({
           title: 'Success!',
           text: "Document generated!",
@@ -64,7 +64,7 @@ export class ResidencyCertComponent {
   ];
 
   inputCheck(){
-    if(this.residentModel.firstName && this.residentModel.lastName && this.residentModel.midName && this.residentModel.houseNum && this.residentModel.street ){
+    if(this.residentModel.firstName && this.residentModel.lastName && this.residentModel.midName && this.residentModel.houseNum && this.residentModel.street && this.residentModel.purpose ){
       this.isValid = true;
     }else{
       this.isValid = false;

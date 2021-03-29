@@ -80,7 +80,7 @@
                 <div class="row">
                   <div class="col">
                         <mat-form-field   appearance="outline">
-                          <textarea matInput placeholder="House Number" name="houseNum" [(ngModel)]="residentModel.houseNum"></textarea>
+                          <input matInput placeholder="House Number" name="houseNum" [(ngModel)]="residentModel.houseNum">
                           <!-- <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
                             Address is <strong>required</strong>
                           </mat-error> -->
@@ -88,7 +88,7 @@
                   </div>
                   <div class="col">
                     <mat-form-field  appearance="outline">
-                      <textarea matInput placeholder="Street" name="street" [(ngModel)]="residentModel.street"></textarea>
+                      <input matInput placeholder="Street" name="street" [(ngModel)]="residentModel.street">
                       <!-- <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
                         Address is <strong>required</strong>
                       </mat-error> -->
@@ -105,7 +105,7 @@
                 </div>
               </div>
 
-              <h1 class="poppins-bold">Other Details</h1>
+              <h1 class="poppins-bold">Purpose</h1>
               <div class="zontaline"></div>
               <div class="otherdetails">
                 <div class="row">

@@ -72,21 +72,23 @@ export class DocumentService {
     this.brgy.next(brgy);
   }
 //pass form values to components
-  changeMessageIndigency(lastn: string,firstn: string,midn: string,age: string,gender: string,status: string){
+  changeMessageIndigency(lastn: string,firstn: string,midn: string,age: string,gender: string,status: string, purpose:string){
     this.lastName.next(lastn);
     this.firstName.next(firstn);
     this.midName.next(midn);
     this.age.next(age);
     this.gender.next(gender);
     this.status.next(status);
+    this.purpose.next(purpose);
   }
 //pass form values to components
-  changeMessageResidency(lastn: string,firstn: string,midn: string,houseN: string,street: string){
+  changeMessageResidency(lastn: string,firstn: string,midn: string,houseN: string,street: string, purpose:string){
     this.lastName.next(lastn);
     this.firstName.next(firstn);
     this.midName.next(midn);
     this.houseNum.next(houseN);
     this.street.next(street);
+    this.purpose.next(purpose);
   }
 
   }

@@ -30,7 +30,7 @@ export class IndigencyComponent {
   ];
 
 
-  residentModel = new Indigency('','','','','','');
+  residentModel = new Indigency('','','','','','','');
 
 //To document preview
   onSubmit(){
@@ -41,7 +41,7 @@ export class IndigencyComponent {
         //insert to db???
 
         //pass input value to service to another component
-        this.document.changeMessageIndigency(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.age,this.residentModel.gender,this.residentModel.status);
+        this.document.changeMessageIndigency(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.age,this.residentModel.gender,this.residentModel.status,this.residentModel.purpose);
         Swal.fire({
           title: 'Success!',
           text: "Document generated!",
@@ -66,7 +66,7 @@ export class IndigencyComponent {
   }
 
   inputCheck(){
-    if(this.residentModel.firstName && this.residentModel.lastName && this.residentModel.age && this.residentModel.gender && this.residentModel.midName && this.residentModel.status){
+    if(this.residentModel.firstName && this.residentModel.lastName && this.residentModel.age && this.residentModel.gender && this.residentModel.midName && this.residentModel.status, this.residentModel.purpose){
       this.isValid = true;
     }else{
       this.isValid = false;
