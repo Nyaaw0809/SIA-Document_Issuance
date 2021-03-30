@@ -13,7 +13,7 @@
       <img class="seal" src="/assets/gaposeal.png" alt="seal">
       <img class="seal2" src="/assets/republic.png" alt="seal2">
       <h3>REPUBLIC OF THE PHILIPPINES<br>CITY OF OLONGAPO</h3>
-        
+
       <h3 id="brgy">BARANGAY <!-- {{brgy}} --> </h3>
       <h2>OFFICE OF THE PUNONG BARANGAY</h2>
       <hr>
@@ -23,21 +23,21 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur incidunt placeat mollitia suscipit in tempora officiis quos cum nesciunt sint dolorum saepe quas magnam laudantium quod, maxime possimus ullam nihil amet eveniet consequuntur iste cumque vero harum? Rem cupiditate temporibus quia reiciendis quos fugit laborum ipsam veritatis nemo maiores? Dicta!
               </p>
             </div>
-            --> 
-          
-  
+            -->
+
+
             <div class="rightside">
-  
-  
+
+
               <h1>CERTIFICATE OF INDIGENCY</h1>
-              <p><b>THIS IS TO CERTIFY</b> that <b> FIRSTNAME MIDDLE LASTNAME, CIVIL STATUS, AGE, SEX</b>, Filipino Citizen, is a bonafide resident of <b> STREET , BARANGAY. </b> 
+              <p><b>THIS IS TO CERTIFY</b> that <b> {{firstn}} {{midn}} {{lastn}}, {{status}}, {{age}}, {{gender}}</b>, Filipino Citizen, is a bonafide resident of <b> STREET , BARANGAY. </b>
                 Further certify that the above-named person belongs to the low-income or <b>Indigent Family</b> in this Barangay and well known to be of good moral character and law abiding citizen.<br><br>
                 This certificate is being issued upon the request of the above named person for <b>PURPOSE</b> purposes.<br><br>
                 Given this <b>{{ myDate | date}}</b> at Barangay <b><!-- {{brgy}} -->, CITY OF OLONGAPO.</b>
               </p>
-  
+
               <br>
-              <p><b>WHOLE NAME</b>
+              <p><b>{{lastn}}, {{firstn}} {{midn}}</b>
               <br>Signature of Applicant<br>
               ISSUED ON: {{ myDate | date:'medium'}} <br>
               ISSUED AT: <!-- {{brgy}} --> , OLONGAPO CITY
@@ -45,14 +45,14 @@
               <p id="demo"></p>
               <p class="closingnote">
                 <b>
-                Noted by:<br>NAME OF CAPTAIN<br>Punong Barangay</b> 
+                Noted by:<br>NAME OF CAPTAIN<br>Punong Barangay</b>
               </p>
-  
+
               <p style="font-style: italic; font-weight: bold; margin-top: 350px;">Note: Not valid without official seal of the Barangay</p>
-  
+
             </div>
           </div>
-  
+
       </mat-card>
 
 

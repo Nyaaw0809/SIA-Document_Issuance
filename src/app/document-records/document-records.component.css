@@ -283,3 +283,9 @@ mat-icon {
   margin-right: 15px;
   padding: 25px;
 }
+
+.grid-container
+{
+  margin: auto;
+  width:95%;
+}

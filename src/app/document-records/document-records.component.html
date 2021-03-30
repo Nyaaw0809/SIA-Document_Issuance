@@ -35,7 +35,6 @@
               <hr>
           </div>
 
-  <mat-card class="tableCon">
   <div class="grid-container">
 
     <mat-grid-list cols="4" rowHeight="50px">
@@ -44,8 +43,10 @@
       <mat-grid-tile ></mat-grid-tile>
       <mat-grid-tile>
         <mat-form-field>
-          <mat-icon class="search">search</mat-icon>
+
           <span class="search-bar"><input matInput (keyup)="applyFilter($event)"></span>
+          <mat-icon class="search">search</mat-icon>
+
         </mat-form-field>
       </mat-grid-tile>
     </mat-grid-list>
@@ -104,7 +105,7 @@
                         justify-content: center;
                         align-items: center;
           ">
-              <button style="margin-right:20px;" mat-fab color="accent"><mat-icon>visibility</mat-icon></button>
+              <button style="margin-right:20px;" mat-fab color="secondary"><mat-icon>visibility</mat-icon></button>
               <button mat-fab color="secondary"><mat-icon>edit</mat-icon></button>
             </div>
 
@@ -123,7 +124,6 @@
     </mat-grid-list>
 
 </div>
-</mat-card>
 
 </mat-sidenav-content>
 </mat-sidenav-container>
