@@ -132,7 +132,24 @@ export class BrgyClearanceComponent {
 
 
   logout(){
-    this.router.navigate(["/login"]);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You want to leave the system?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Log out'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Logged out',
+          'Successfully logged out.',
+          'success'
+        )
+        this.router.navigate(["/login"]);
+      }
+    })
   }
 }
 

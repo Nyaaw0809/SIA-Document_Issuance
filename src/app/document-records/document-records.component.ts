@@ -7,6 +7,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import {MatTableDataSource} from '@angular/material/table';
 import { Record } from '../record.model';
 import {MatPaginator} from '@angular/material/paginator';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -76,7 +77,24 @@ export class DocumentRecordsComponent implements OnInit{
 
 
   logout(){
-    this.router.navigate(["/login"]);
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You want to leave the system?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Log out'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Logged out',
+          'Successfully logged out.',
+          'success'
+        )
+        this.router.navigate(["/login"]);
+      }
+    })
   }
 
 }
