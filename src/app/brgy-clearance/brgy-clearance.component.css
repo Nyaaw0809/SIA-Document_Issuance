@@ -175,7 +175,8 @@ mat-card-title {
 .user-profile {
   height: 40px;
   width: 40px;
-  margin-left: 1360px;
+  right: 60px;
+  position: absolute;
 }
 
 .dashboardCard {

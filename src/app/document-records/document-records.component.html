@@ -8,13 +8,13 @@
               <img class="bms-logo" src="/assets/avatar1.png">
               <h2 style="color: #020101">ADMIN</h2>
               <mat-divider [vertical]="false"></mat-divider>
-          <button mat-button class="sidebarcontent" routerLink="/home" ><mat-icon  class="sidenavBtn">dashboard</mat-icon> Dashboard</button><br>
+          <button mat-button class="sidebarcontent" routerLink="/home" ><mat-icon  class="sidenavBtn">dashboard</mat-icon> Dashboard</button>
 
-          <button mat-button class="sidebarcontent" routerLink="/documentRecords" routerLinkActive="selected"><mat-icon class="sidenavBtn">table_chart</mat-icon> Issued Documents</button><br>
+          <button mat-button class="sidebarcontent" routerLink="/documentRecords" routerLinkActive="selected"><mat-icon class="sidenavBtn">table_chart</mat-icon> Issued Documents</button>
 
           <h3 style="color: #020101">Documents</h3><br>
               <mat-divider [vertical]="false"></mat-divider>
-          <button mat-button class="sidebarcontent" routerLink="/brgy-clearance" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Barangay Clearance</button><br>
+          <button mat-button class="sidebarcontent" routerLink="/brgy-clearance" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Barangay Clearance</button>
           <button mat-button class="sidebarcontent" routerLink="/indigency" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Certificate of Indigency</button><br>
           <button mat-button class="sidebarcontent"  routerLink="/residency" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Certificate of Residency</button><br>
       </mat-sidenav>
@@ -26,7 +26,7 @@
                 <button mat-icon-button class="example-icon" (click)="isExpanded = !isExpanded" aria-label="Example icon-button with menu icon" mat-button (click)="drawer.toggle()">
                   <mat-icon [ngStyle]="{'color': 'white'}">menu</mat-icon>
                 </button>
-                <span class="example-spacer"></span>
+                <!-- <span class="example-spacer"></span> -->
                 <img class="user-profile" src="/assets/avatar1.png">
                 <span class="example-spacer"></span>
                 <button mat-icon-button (click)="logout()" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -45,10 +45,9 @@
       <mat-grid-tile ></mat-grid-tile>
       <mat-grid-tile>
         <mat-form-field>
-
-          <span class="search-bar"><input matInput (keyup)="applyFilter($event)"></span>
-          <mat-icon class="search">search</mat-icon>
-
+          <mat-label>Search</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Search for records" #input>
+          <mat-icon class="searchIcon">search</mat-icon>
         </mat-form-field>
       </mat-grid-tile>
     </mat-grid-list>

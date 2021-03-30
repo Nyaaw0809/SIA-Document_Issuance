@@ -196,6 +196,8 @@ mat-card-title {
 }
 
 .sidebarcontent {
+  margin-top: 0px;
+  margin-bottom: 0px;
   width: 100%;
   padding: 8px;
   font-family: "Poppins", sans-serif;
@@ -215,10 +217,17 @@ mat-card-title {
   margin-top: 10px;
 }
 
+.searchIcon{
+  right: 5px;
+  position: absolute;
+}
+
 .user-profile {
   height: 40px;
   width: 40px;
-  margin-left: 1360px;
+  right: 60px;
+  position: absolute;
+  /* margin-left: 1360px; */
 }
 
 .dashboardCard {
