@@ -163,7 +163,7 @@ mat-card-title {
   font-weight: 500;
 }
 
-.user-profile {
+.bms-logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -171,6 +171,13 @@ mat-card-title {
   margin-bottom: 20px;
   margin-top: 10px;
 }
+
+.user-profile {
+  height: 40px;
+  width: 40px;
+  margin-left: 1360px;
+}
+
 .dashboardCard {
   display: flex;
   justify-content: center;

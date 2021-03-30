@@ -89,7 +89,7 @@ table {
 }
 
 .search {
-  float: left;
+  float: right;
 }
 
 .example-spacer {
@@ -206,13 +206,19 @@ mat-card-title {
   font-weight: 400;
 }
 
-.user-profile {
+.bms-logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 70%;
   margin-bottom: 20px;
   margin-top: 10px;
+}
+
+.user-profile {
+  height: 40px;
+  width: 40px;
+  margin-left: 1360px;
 }
 
 .dashboardCard {

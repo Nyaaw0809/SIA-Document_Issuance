@@ -5,7 +5,7 @@
   <mat-sidenav-container autosize>
 
       <mat-sidenav #drawer mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
-              <img class="user-profile" src="/assets/avatar1.png">
+              <img class="bms-logo" src="/assets/avatar1.png">
               <h2 style="color: #020101">ADMIN</h2>
               <mat-divider [vertical]="false"></mat-divider>
           <button mat-button class="sidebarcontent" routerLink="/home" ><mat-icon  class="sidenavBtn">dashboard</mat-icon> Dashboard</button><br>
@@ -26,6 +26,8 @@
                 <button mat-icon-button class="example-icon" (click)="isExpanded = !isExpanded" aria-label="Example icon-button with menu icon" mat-button (click)="drawer.toggle()">
                   <mat-icon [ngStyle]="{'color': 'white'}">menu</mat-icon>
                 </button>
+                <span class="example-spacer"></span>
+                <img class="user-profile" src="/assets/avatar1.png">
                 <span class="example-spacer"></span>
                 <button mat-icon-button (click)="logout()" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
                   <mat-icon [ngStyle]="{'color': 'white'}">logout</mat-icon>
