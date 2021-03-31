@@ -28,12 +28,12 @@ export class DocumentRecordsComponent implements OnInit{
     this.getRecords();
 
   }
-
   public getRecords(){
     this.document.getRecords(btoa("getrecords"))
-    .subscribe(result=>{this.dataSource.data=result;
+    .subscribe(result=>{
+      this.dataSource.data=result;
       this.dataSource.paginator= this.paginator;
-    console.log(result)
+      console.log(result)
       console.log(this.dataSource.data)
   });
   }

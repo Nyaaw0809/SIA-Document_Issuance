@@ -9,7 +9,7 @@ import { ResidentRecord } from '../resident-record';
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import Swal from 'sweetalert2'
-
+import {Document} from '../document.model';
 
 
 @Component({
@@ -19,40 +19,108 @@ import Swal from 'sweetalert2'
 })
 export class BrgyClearanceComponent {
 
+  docu = new Document( 0,0,'');
   residentModel = new ResidentRecord('','','','','','','');
   isValid: boolean = false;
   isResident: boolean = false;
-  valToCheck: any;
+  valToCheck: any[] = [];
   condition: string;
   ngOnInit() {
 
+
   }
+
+
+  public getRecords(){
+    this.document.getRecords(btoa("checkres"))
+          .subscribe((result:any[])=>{
+              this.valToCheck = result;
+              console.log(this.valToCheck);
+        });
+
+  }
+  public addRecords(){
+    this.document.newRecord(btoa("newrecord"), this.docu)
+          .subscribe((result:any[])=>{
+              this.valToCheck = result;
+              console.log(this.valToCheck);
+        });
+
+  }
+
+  public getRecordsDocu(){
+    this.document.getRecords(btoa("getrecords"))
+    .subscribe(result=>{
+      console.log(result)
+  });
+  }
+
+  emptyRec(){
+    this.docu.doc_purpose='';
+    this.docu.doc_type_id=0;
+    this.docu.res_id = 0;
+    this.residentModel.firstName = '';
+    this.residentModel.midName = '';
+    this.residentModel.lastName = '';
+    this.residentModel.purpose = '';
+    this.residentModel.houseNum = '';
+    this.residentModel.street = '';
+  }
+
   resident: any = {};
 //To document preview
   onSubmit(data){
     // add na lang ung barangay field pag may final db na
     this.inputCheck();
+
     if (this.isValid){
+      this.getRecords();
       //insert to db
       // this.document.newRecord(btoa("newrecord"),data).subscribe((data: any) =>{console.log(data);});
       this.residentModel.brgy="Barangay Cabalan";
       //pass input value to service to another component
 
-      this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose,this.residentModel.brgy);
+      for (let res of this.valToCheck){
+        if( this.residentModel.firstName == res.res_fname
+          &&  this.residentModel.lastName == res.res_lname
+          && this.residentModel.midName  == res.res_mname )
+          {
+            this.docu.res_id = res.res_id;
+            this.docu.doc_type_id = 1;
+            this.docu.doc_purpose = this.residentModel.purpose;
+          console.log(this.docu);
+          console.log("match!")
+          Swal.fire({
+            title: 'Success!',
+            text: "Document generated!",
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'View Document'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.addRecords();
 
+              this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose,this.residentModel.brgy);
 
+            //  this.router.navigate(["/brgyclearanceView"]);
+            this.emptyRec();
+            }
+          })
+          break;
+        }else{
+          //THERE IS A BUG HAHAHA
+          // (this.residentModel.firstName != res.res_fname
+          //   &&  this.residentModel.lastName != res.res_lname
+          //   && this.residentModel.midName  != res.res_mname)
+          console.log("not a resident!")
+          Swal.fire(
+            'Not a Resident!',
+            'Please regiester or contact an authorized person.',
+            'warning'
+          )
 
-      Swal.fire({
-        title: 'Success!',
-        text: "Document generated!",
-        icon: 'success',
-        confirmButtonColor: '#3085d6',
-        confirmButtonText: 'View Document'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          this.router.navigate(["/brgyclearanceView"]);
         }
-      })
+      }
 
     }else{
       Swal.fire(
@@ -60,12 +128,7 @@ export class BrgyClearanceComponent {
         'Fill all the fields.',
         'warning'
       )
-    //   this.condition = "WHERE res_fname='"+this.residentModel.lastName+"' AND res_fname='"+ this.residentModel.firstName+ "' AND res_mname='"+ this.residentModel.midName+ "'"
-    //   this.document.getRecords(btoa("checkres"))
-    //   .subscribe(result=>{
-    //       this.valToCheck = result;
-    //       console.log(this.valToCheck);
-    // });
+
     }
   }
 

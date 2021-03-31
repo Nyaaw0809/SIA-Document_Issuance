@@ -43,7 +43,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         //INSERT
       case 'newrecord':
         $d = json_decode(file_get_contents("php://input"));
-        echo json_encode($gm->insert("DocIssuance_issuedDocs", $d), JSON_PRETTY_PRINT);
+        echo json_encode($gm->insert("tbl_documents", $d), JSON_PRETTY_PRINT);
         return array("data" => $d);
         break;
         //UPDATE

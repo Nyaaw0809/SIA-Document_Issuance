@@ -18,21 +18,22 @@ export class DocumentService {
 
   getRecords(endpoint: any, condition?: any){
     //getRecords
-    return this._http.post<any[]>(this.baseUrl + endpoint, condition);
+    console.log(condition);
+    return this._http.post<any[]>(this.baseUrl + endpoint, btoa(JSON.stringify(condition)));
   }
 
 
-  check(endpoint: any,table:any, condition?: any){
+  check(endpoint: any, condition?: any){
     //getRecords
-    table = btoa(table);
     condition = btoa(condition)
-    return this._http.post<any[]>(this.baseUrl + endpoint, (table), (condition));
+    return this._http.post<any[]>(this.baseUrl + endpoint,btoa(condition));
   }
 
   newrecord: any={};
 
   newRecord(endpoint:any, data:any){
    this.newrecord = JSON.stringify(data);
+   console.log(data);
     return <any>(this._http.post(this.baseUrl + endpoint, JSON.stringify(data)));
   }
 
