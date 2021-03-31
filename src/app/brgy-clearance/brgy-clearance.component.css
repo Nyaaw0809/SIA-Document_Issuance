@@ -80,11 +80,6 @@ body {
   float: left;
 }
 
-h1 {
-  margin-left: 10px;
-  font-family: "Poppins", sans-serif;
-}
-
 h2 {
   text-align: left;
   font-family: "Poppins", sans-serif;
@@ -108,8 +103,8 @@ p {
 }
 
 .poppins-bold {
+  margin-left: 10px;
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
   color: #404040;
 }
 
@@ -272,7 +267,7 @@ mat-icon {
 .poppins-bold {
   font-family: "Poppins", sans-serif;
   color: #404040;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 .zontaline {
