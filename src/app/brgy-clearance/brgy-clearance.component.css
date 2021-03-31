@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 mat-sidenav-container {
   height: 100%;
 }
@@ -39,7 +39,7 @@ mat-nav-list {
   text-align: left;
   margin-left: 0px;
   padding-left: 16;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .mat-list-item:hover {
   font-weight: bold;
@@ -86,8 +86,11 @@ h1 {
 }
 
 h2 {
-  text-align: center;
+  text-align: left;
   font-family: "Poppins", sans-serif;
+  margin-top: 40px;
+  margin-left: 30px;
+  font-size: 20px;
 }
 
 h3 {
@@ -167,14 +170,14 @@ mat-card-title {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
   margin-bottom: 20px;
   margin-top: 10px;
+  max-width: 100%;
 }
 
 .user-profile {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   right: 60px;
   position: absolute;
 }
@@ -268,8 +271,8 @@ mat-icon {
 
 .poppins-bold {
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
   color: #404040;
+  font-size: 22px;
 }
 
 .zontaline {
@@ -277,9 +280,18 @@ mat-icon {
 }
 
 .title-system {
-  margin-left: 30px;
+  margin-left: 10px;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 22px;
+  margin-top: 2px;
 }
+
 hr {
   margin-left: 30px;
   margin-right: 30px;
+}
+
+.btn-generate {
+  float: right;
 }
