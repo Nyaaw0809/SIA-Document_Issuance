@@ -7,12 +7,11 @@
       <mat-sidenav #drawer mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
               <img class="bms-logo" src="/assets/logo_SIA.png">
               <mat-divider [vertical]="false"></mat-divider>
+              <h3>RESIDENTS</h3>
           <button mat-button class="sidebarcontent" routerLink="/home" ><mat-icon  class="sidenavBtn">dashboard</mat-icon> Dashboard</button>
-
-          <button mat-button class="sidebarcontent" routerLink="/documentRecords" routerLinkActive="selected"><mat-icon class="sidenavBtn">table_chart</mat-icon> Issued Documents</button>
-
-          <h3 style="color: #020101">Documents</h3><br>
-              <mat-divider [vertical]="false"></mat-divider>
+          <button mat-button class="sidebarcontent" routerLink="/documentRecords" routerLinkActive="selected"><mat-icon class="sidenavBtn" routerLinkActive="selected">table_chart</mat-icon> Issued Documents</button>
+          <mat-divider [vertical]="false"></mat-divider>
+          <h3>DOCUMENTS</h3>
           <button mat-button class="sidebarcontent" routerLink="/brgy-clearance" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Barangay Clearance</button>
           <button mat-button class="sidebarcontent" routerLink="/indigency" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Certificate of Indigency</button><br>
           <button mat-button class="sidebarcontent"  routerLink="/residency" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Certificate of Residency</button><br>
