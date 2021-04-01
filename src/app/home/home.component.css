@@ -94,7 +94,6 @@ body {
 
 .poppins {
   font-family: "Poppins", sans-serif;
-  float: right;
 }
 .poppins1 {
   font-family: "Poppins", sans-serif;
@@ -113,7 +112,7 @@ h3 {
   text-align: left;
   font-family: "Poppins", sans-serif;
   margin-left: 20px;
-  margin-top: 40px;
+  margin-top: 15px;
   margin-bottom: -5px;
 }
 
@@ -122,9 +121,13 @@ hr {
   margin-right: 30px;
 }
 
-p {
-  font-size: 30px;
+.pp {
+  font-size: 20px;
   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
 }
 
 .poppins-bold {
@@ -208,13 +211,13 @@ mat-card-title {
   right: 60px;
   position: absolute;
 }
-
+/*
 .dashboardCard {
   display: flex;
   justify-content: center;
   margin-top: 30px;
   margin-bottom: 40px;
-}
+} */
 
 .dashboardSecondCard {
   display: flex;
@@ -268,7 +271,6 @@ mat-icon {
 .dashboardCard {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
 }
 
 .patients-card {
@@ -284,17 +286,16 @@ mat-icon {
   width: 95%;
   margin: auto;
   padding: 20px;
+  justify-content: center;
 }
 
 .sqCard {
-  margin-left: 65px;
   margin-right: 50px;
   width: 30%;
   height: 180px;
   color: white;
-  font-size: 45px;
-  font-weight: bold;
-  background-color: #ffc107;
+  font-size: 30px;
+  padding: 25px;
 }
 
 .sqCard1 {
@@ -302,18 +303,15 @@ mat-icon {
   width: 30%;
   height: 180px;
   color: white;
-  font-size: 45px;
-  font-weight: bold;
-  background-color: #0277bd;
+  font-size: 30px;
+  padding: 25px;
 }
 .sqCard2 {
-  margin-right: 50px;
   width: 30%;
   height: 180px;
   color: white;
-  font-size: 45px;
-  font-weight: bold;
-  background-color: #d32f2f;
+  font-size: 30px;
+  padding: 25px;
 }
 
 .c1 {
@@ -324,4 +322,26 @@ mat-icon {
   margin-right: 30px;
   width: 50%;
   height: 450px;
+}
+
+.docu-card {
+  width: 380px;
+  height: 150px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 25px;
+}
+
+p {
+  float: left;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.unsettledicon{
+  width: 60px;
+  float: right;
+  margin-right: -5px;
+  margin-top: -90px;
 }

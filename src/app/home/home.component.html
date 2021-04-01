@@ -8,8 +8,7 @@
               <img class="bms-logo" src="/assets/logo_SIA.png">
               <mat-divider [vertical]="false"></mat-divider>
           <button mat-button class="sidebarcontent" routerLink="/home" routerLinkActive="selected"><mat-icon  class="sidenavBtn">dashboard</mat-icon> Dashboard</button><br>
-          <button mat-button class="sidebarcontent" routerLink="/documentRecords" ><mat-icon class="sidenavBtn">table_chart</mat-icon> Issued Documents</button><br>
-
+          <button mat-button class="sidebarcontent" routerLink="/documentRecords" ><mat-icon class="sidenavBtn">table_chart</mat-icon> Issued Documents</button>
           <h3 style="color: #201212">Documents</h3><br>
               <mat-divider [vertical]="false"></mat-divider>
           <button mat-button class="sidebarcontent" routerLink="/brgy-clearance" routerLinkActive="selected"><mat-icon class="sidenavBtn">description</mat-icon>Barangay Clearance</button><br>
@@ -35,13 +34,38 @@
               <h2>Dashboard</h2>
               <hr>
           </div>
-  <div class="gridCon">
-    <mat-card class="sqCard">STEP 1 <br><p>COMPLETE THE REQUIREMENTS</p></mat-card>
-    <mat-card class="sqCard1">STEP 2 <br><p>FILL OUT THE FORMS</p></mat-card>
-    <mat-card class="sqCard2">STEP 3 <br><p>PROCEED TO PAYMENT</p></mat-card>
-  </div>
+
+          <div class="dashboardCard">
+            <mat-card class="docu-card" style="background-color: #d00030d6; color: #ffffff;">
+                <mat-card-content >
+                    <p class="poppins">QWER</p>
+                </mat-card-content>
+                <mat-card-title class="poppins" style="font-size:25px;">Step 1</mat-card-title>
+                <mat-icon class="unsettledicon">done_all</mat-icon>
+                <img mat-card-image src="/assets/unsettled.png"class="unsettledicon">
+            </mat-card>
+
+            <mat-card class="docu-card" style="background-color: #0b8e45d1; color: #ffffff;">
+                <mat-card-content>
+                    <p>QWER</p>
+                </mat-card-content>
+                <mat-card-title class="poppins" style="font-size:25px;">Step 2</mat-card-title>
+                <img mat-card-image src="/assets/settled.png"class="settledicon">
+            </mat-card>
+
+            <mat-card class="docu-card" style="background-color: #da4516d1; color: #ffffff;">
+                <mat-card-content >
+                    <p>QWER</p>
+                </mat-card-content>
+                <mat-card-title class="poppins" style="font-size:25px;">Step 3</mat-card-title>
+                <img mat-card-image src="/assets/unschedule.png"class="unscheduleicon">
+            </mat-card>
+
+        </div>
+
+
             <div class="gridCon">
-              <mat-card class="bgrCard">
+              <mat-card class="bgrCard" >
                 <h2>Issued Documents Chart</h2>
                 <div style="display: block; margin-top: 50px;">
                   <canvas baseChart
@@ -55,7 +79,7 @@
                 </div>
 
               </mat-card>
-              <mat-card class="bgrCard">
+              <mat-card class="bgrCard" >
                 <h2>Issued Documents per Month</h2>
                 <div style="display: block;">
                   <canvas baseChart width="300" height="160"
