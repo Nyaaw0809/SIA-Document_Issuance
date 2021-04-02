@@ -91,6 +91,7 @@ table {
 
 .poppins {
   font-family: "Poppins", sans-serif;
+  float: right;
 }
 .poppins1 {
   font-family: "Poppins", sans-serif;
@@ -320,8 +321,9 @@ p {
 .unsettledicon{
   opacity: 0.3;
   width: 80px;
-  float: right;
-  margin-right: 0px;
-  margin-top: 0px;
+  float: left;
 }
 
+.dashCard {
+  display: block;
+}
