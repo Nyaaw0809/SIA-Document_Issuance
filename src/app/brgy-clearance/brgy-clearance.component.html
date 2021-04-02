@@ -34,6 +34,57 @@
               <h2>Barangay Clearance</h2>
               <hr>
           </div>
+
+<!--  -->
+
+<div class="modalFields">
+  <mat-list role="list">
+      <mat-list-item class="fieldNames"role="listitem">First Name</mat-list-item>
+      <mat-list-item class="fieldNames"role="listitem">Middle Name</mat-list-item>
+      <mat-list-item class="fieldNames"role="listitem">Last Name</mat-list-item>
+  </mat-list>
+
+  <div class="inputs">
+
+      <mat-form-field appearance="outline">
+      <input class="blotterInfo" matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+      <input class="blotterInfo" matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+      <input class="blotterInfo" matInput>
+      </mat-form-field>
+
+
+  </div>
+
+  <mat-list role="list" class="rightside">
+      <mat-list-item class="fieldNames"role="listitem">Incident Entry No.</mat-list-item>
+      <mat-list-item class="fieldNames"role="listitem">Contact Number</mat-list-item>
+      <mat-list-item class="fieldNames"role="listitem">Gender</mat-list-item>
+  </mat-list>
+
+  <div class="inputs2">
+      <mat-form-field appearance="outline">
+      <input class="blotterInfo" matInput >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+      <input class="blotterInfo" matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+      <input class="blotterInfo" matInput>
+      </mat-form-field>
+
+  </div>
+
+</div>
+
+          <!--  -->
       <form  #addForm='ngForm' novalidate (ngSubmit)="onSubmit(addForm.value)">
         <mat-card style="width: 90%;" class="shipping-card">
 

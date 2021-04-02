@@ -20,10 +20,10 @@ switch ($_SERVER['REQUEST_METHOD']) {
         //SELECT
       case 'getrecords':
         if (count($req) > 1) {
-          echo json_encode($gm->select("tbl_residents INNER JOIN tbl_documents ON tbl_residents.res_id=tbl_documents.res_id INNER JOIN tbl_doctype ON tbl_doctype.doc_type_id=tbl_documents.doc_type_id
+          echo json_encode($gm->select("tbl_profiling_residents INNER JOIN tbl_docuissuance_doctransaction ON tbl_profiling_residents.res_id=tbl_docuissuance_doctransaction.res_id INNER JOIN tbl_docuissuance_documents ON tbl_docuissuance_documents.docu_id=tbl_docuissuance_doctransaction.docu_id
           ", $req[1]), JSON_PRETTY_PRINT);
         } else {
-          echo json_encode($gm->select("tbl_residents INNER JOIN tbl_documents ON tbl_residents.res_id=tbl_documents.res_id INNER JOIN tbl_doctype ON tbl_doctype.doc_type_id=tbl_documents.doc_type_id
+          echo json_encode($gm->select("tbl_profiling_residents INNER JOIN tbl_docuissuance_doctransaction ON tbl_profiling_residents.res_id=tbl_docuissuance_doctransaction.res_id INNER JOIN tbl_docuissuance_documents ON tbl_docuissuance_documents.docu_id=tbl_docuissuance_doctransaction.docu_id
           ", null), JSON_PRETTY_PRINT);
         }
 
@@ -32,9 +32,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
         //CHECK IF RESIDENT
         case 'checkres':
           if (count($req) > 1) {
-            echo json_encode($gm->select("tbl_residents", $req[0]), JSON_PRETTY_PRINT);
+            echo json_encode($gm->select("tbl_profiling_residents", $req[0]), JSON_PRETTY_PRINT);
           } else {
-            echo json_encode($gm->select("tbl_residents", null), JSON_PRETTY_PRINT);
+            echo json_encode($gm->select("tbl_profiling_residents", null), JSON_PRETTY_PRINT);
           }
 
 
@@ -43,7 +43,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         //INSERT
       case 'newrecord':
         $d = json_decode(file_get_contents("php://input"));
-        echo json_encode($gm->insert("tbl_documents", $d), JSON_PRETTY_PRINT);
+        echo json_encode($gm->insert("tbl_docuissuance_doctransaction", $d), JSON_PRETTY_PRINT);
         return array("data" => $d);
         break;
         //UPDATE

@@ -291,3 +291,40 @@ hr {
 .btn-generate {
   float: right;
 }
+
+/* Field BLotter system */
+.modalFields {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+.fieldNames {
+  margin-bottom:37px;
+  margin-top: 18px;
+  font-family: 'Poppins', sans-serif;
+}
+.inputs {
+  width: 400px;
+  border-top-width: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.blotterInfo {
+  font-size: 16px;
+}
+/*
+.rightside{
+  margin-top: -25px;
+} */
+
+.inputs2 {
+  width: 350px;
+  border-top-width: 0;
+  margin-left: 15px;
+  margin-right: 5px;
+  font-family: 'Poppins', sans-serif;
+}

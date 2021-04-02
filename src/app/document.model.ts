@@ -3,7 +3,7 @@ export class Document
 {
   constructor(
   public res_id: number,
-  public doc_type_id: number,
-  public doc_purpose:string
+  public docu_id: number,
+  public trans_purpose:string
   ){}
 }

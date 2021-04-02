@@ -56,8 +56,8 @@ export class BrgyClearanceComponent {
   }
 
   emptyRec(){
-    this.docu.doc_purpose='';
-    this.docu.doc_type_id=0;
+    this.docu.trans_purpose='';
+    this.docu.docu_id=0;
     this.docu.res_id = 0;
     this.residentModel.firstName = '';
     this.residentModel.midName = '';
@@ -86,8 +86,8 @@ export class BrgyClearanceComponent {
           && this.residentModel.midName  == res.res_mname )
           {
             this.docu.res_id = res.res_id;
-            this.docu.doc_type_id = 1;
-            this.docu.doc_purpose = this.residentModel.purpose;
+            this.docu.docu_id = 1;
+            this.docu.trans_purpose = this.residentModel.purpose;
           console.log(this.docu);
           console.log("match!")
           Swal.fire({
