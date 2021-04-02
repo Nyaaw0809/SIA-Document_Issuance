@@ -88,9 +88,6 @@ table {
   justify-content: center;
 }
 
-body {
-  overflow: hidden;
-}
 
 .poppins {
   font-family: "Poppins", sans-serif;
@@ -289,31 +286,7 @@ mat-icon {
   margin: auto;
   padding: 20px;
   justify-content: center;
-}
-
-.sqCard {
-  margin-right: 50px;
-  width: 30%;
-  height: 180px;
-  color: white;
-  font-size: 30px;
-  padding: 25px;
-}
-
-.sqCard1 {
-  margin-right: 50px;
-  width: 30%;
-  height: 180px;
-  color: white;
-  font-size: 30px;
-  padding: 25px;
-}
-.sqCard2 {
-  width: 30%;
-  height: 180px;
-  color: white;
-  font-size: 30px;
-  padding: 25px;
+  color: #444;
 }
 
 .c1 {
@@ -324,28 +297,31 @@ mat-icon {
   margin-left: 3px;
   margin-right: 3px;
   width: 50%;
-  height: 320px;
+  height: 350px;
 }
 
 .docu-card {
   width: 380px;
-  height: 150px;
-  margin-left: 30px;
-  margin-right: 30px;
+  height: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-top: 10px;
   padding: 25px;
+  overflow: hidden;
 }
 
 p {
   float: left;
-  font-size: 45px;
+  font-size: 50px;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
 }
 
 .unsettledicon{
-  width: 60px;
+  opacity: 0.3;
+  width: 80px;
   float: right;
-  margin-right: -5px;
-  margin-top: -90px;
+  margin-right: 0px;
+  margin-top: 0px;
 }
+

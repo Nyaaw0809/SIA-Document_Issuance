@@ -39,34 +39,43 @@
           <div class="dashboardCard">
             <mat-card class="docu-card" style="background-color: #d00030d6; color: #ffffff;">
                 <mat-card-content >
-                    <p class="poppins">QWER</p>
+                    <p class="poppins">1111</p>
                 </mat-card-content>
-                <mat-card-title class="poppins" style="font-size:25px;">Step 1</mat-card-title>
-                <mat-icon class="unsettledicon">done_all</mat-icon>
-                <img mat-card-image src="/assets/unsettled.png"class="unsettledicon">
+                <img mat-card-image src="/assets/teamwork.png" class="unsettledicon"><br><br><br>
+                <mat-card-title class="poppins" style="float:left;font-size: 20px;">Residents</mat-card-title>
+
+
             </mat-card>
 
             <mat-card class="docu-card" style="background-color: #0b8e45d1; color: #ffffff;">
-                <mat-card-content>
-                    <p>QWER</p>
-                </mat-card-content>
-                <mat-card-title class="poppins" style="font-size:25px;">Step 2</mat-card-title>
-                <img mat-card-image src="/assets/settled.png"class="settledicon">
+              <mat-card-content >
+                  <p class="poppins">32</p>
+              </mat-card-content>
+              <img mat-card-image src="/assets/table.png" class="unsettledicon">
+              <mat-card-title class="poppins" style="display:block;float:left;font-size: 20px;margin-top: 55px;margin-left: -50px;"><span style="display:block;">Barangay</span> <span style="display:block;">Clearance</span> </mat-card-title>
             </mat-card>
 
             <mat-card class="docu-card" style="background-color: #da4516d1; color: #ffffff;">
-                <mat-card-content >
-                    <p>QWER</p>
-                </mat-card-content>
-                <mat-card-title class="poppins" style="font-size:25px;">Step 3</mat-card-title>
-                <img mat-card-image src="/assets/unschedule.png" class="unscheduleicon">
+              <mat-card-content >
+                  <p class="poppins">12</p>
+              </mat-card-content>
+              <img mat-card-image src="/assets/cv.png" class="unsettledicon">
+              <mat-card-title class="poppins" style="display:block;float:left;font-size: 20px;margin-top: 55px;margin-left: -40px;"><span style="display:block;">Certificate of</span> <span style="display:block;">Indigency</span> </mat-card-title>
             </mat-card>
+
+            <mat-card class="docu-card" style="background-color: #3f51b5d4; color: #ffffff;">
+              <mat-card-content >
+                  <p class="poppins">47</p>
+              </mat-card-content>
+              <img mat-card-image src="/assets/user.png" class="unsettledicon">
+              <mat-card-title class="poppins" style="float:left;font-size: 20px;margin-top: -30px;">Certificate of Residency</mat-card-title>
+          </mat-card>
 
         </div>
 
 
             <div class="gridCon">
-              <mat-card class="bgrCard" >
+              <mat-card class="bgrCard" style="overflow:hidden;" >
                 <h2 style="text-align: center;">Issued Documents Chart</h2>
                 <div style="display: block; margin-top: 50px;">
                   <canvas baseChart
@@ -80,7 +89,7 @@
                 </div>
 
               </mat-card>
-              <mat-card class="bgrCard" >
+              <mat-card class="bgrCard" style="overflow:hidden;" >
                 <h2 style="text-align: center;">Issued Documents per Month</h2>
                 <div style="display: block;">
                   <canvas baseChart width="300" height="160"
