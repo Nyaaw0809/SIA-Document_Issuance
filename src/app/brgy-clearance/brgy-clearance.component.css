@@ -291,6 +291,8 @@ hr {
 
 .btn-generate {
   float: right;
+  position: relative;
+  bottom: 0px;
 }
 
 /* Field BLotter system */
