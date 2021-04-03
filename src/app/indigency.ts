@@ -6,6 +6,7 @@ export class Indigency {
     public age: string,
     public gender: string,
     public status:string,
-    public purpose:string
+    public purpose:string,
+    public brgy:string
 ){}
 }

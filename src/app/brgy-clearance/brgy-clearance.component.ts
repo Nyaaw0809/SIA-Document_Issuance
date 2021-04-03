@@ -55,15 +55,6 @@ export class BrgyClearanceComponent {
   });
   }
 
-  clearFields(){
-    this.residentModel.firstName = '';
-    this.residentModel.midName = '';
-    this.residentModel.lastName = '';
-    this.residentModel.purpose = '';
-    this.residentModel.houseNum = '';
-    this.residentModel.street = '';
-  }
-
   emptyRec(){
     this.docu.trans_purpose='';
     this.docu.docu_id=0;
@@ -95,7 +86,7 @@ export class BrgyClearanceComponent {
           && this.residentModel.midName  == res.res_mname )
           {
             this.docu.res_id = res.res_id;
-            this.docu.docu_id = 1;
+            this.docu.docu_id = 1;//Clearance
             this.docu.trans_purpose = this.residentModel.purpose;
           console.log(this.docu);
           console.log("match!")

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
-
 mat-sidenav-container {
   height: 100%;
 }
@@ -81,11 +80,6 @@ body {
   float: left;
 }
 
-h1 {
-  margin-left: 10px;
-  font-family: "Poppins", sans-serif;
-}
-
 h2 {
   text-align: left;
   font-family: "Poppins", sans-serif;
@@ -111,9 +105,9 @@ p {
 }
 
 .poppins-bold {
+  margin-left: 10px;
   font-family: "Poppins", sans-serif;
   color: #404040;
-  font-size: 22px;
 }
 
 mat-sidenav-container,
@@ -296,5 +290,46 @@ hr {
 }
 
 .btn-generate {
+  margin-top: 40px;
   float: right;
+  position: relative;
+  bottom: 0px;
+}
+
+/* Field BLotter system */
+.modalFields {
+  margin-left:-54px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+.fieldNames {
+  margin-bottom:37px;
+  margin-top: 18px;
+  font-family: 'Poppins', sans-serif;
+}
+.inputs {
+  width: 400px;
+  border-top-width: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.blotterInfo {
+  font-size: 16px;
+}
+/*
+.rightside{
+  margin-top: -25px;
+} */
+
+.inputs2 {
+  width: 350px;
+  border-top-width: 0;
+  margin-left: 15px;
+  margin-right: 5px;
+  font-family: 'Poppins', sans-serif;
 }

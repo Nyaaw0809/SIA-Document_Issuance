@@ -30,110 +30,70 @@
                   <mat-icon [ngStyle]="{'color': 'white'}" >logout</mat-icon>
                 </button>
               </mat-toolbar>
-              <h2>Certificate of Indigency</h2>
-              <hr>
           </div>
 
 
+          <form  #addForm='ngForm' novalidate (ngSubmit)="onSubmit(addForm.value)">
+            <mat-card style="width: 90%;" class="shipping-card">
+              <h2>Certificate of Indigency</h2>
+                    <hr>
+            <div class="modalFields">
+              <mat-list role="list">
+                  <mat-list-item class="fieldNames"role="listitem">First Name</mat-list-item>
+                  <mat-list-item class="fieldNames"role="listitem">Middle Name</mat-list-item>
+                  <mat-list-item class="fieldNames"role="listitem">Last Name</mat-list-item>
+                  <mat-list-item class="fieldNames"role="listitem">Age</mat-list-item>
+              </mat-list>
 
-            <form #addForm='ngForm' novalidate (ngSubmit)="onSubmit()">
-              <mat-card style="width: 90%;" class="shipping-card">
-                <h1 class="poppins-bold">Name</h1>
-                <div class="zontaline"></div>
+              <div class="inputs">
 
-                <div class="namediv">
-                  <div class="row">
+                  <mat-form-field appearance="outline">
+                  <input class="blotterInfo" matInput   name="firstName" [(ngModel)]="residentModel.firstName">
+                  </mat-form-field>
 
-                    <div class="col">
-                      <mat-form-field class="full-width" appearance="outline">
-                        <input matInput placeholder="Last name"  name="lastname" [(ngModel)]="residentModel.lastName">
-                        <!-- <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
-                          Last name is <strong>required</strong>
-                        </mat-error> -->
-                      </mat-form-field>
-                    </div>
+                  <mat-form-field appearance="outline">
+                  <input class="blotterInfo" matInput  name="middleName" [(ngModel)]="residentModel.midName">
+                  </mat-form-field>
 
-                    <div class="col">
-                      <mat-form-field class="full-width" appearance="outline">
-                        <input matInput placeholder="First name"  name="firstname" [(ngModel)]="residentModel.firstName">
-                        <!-- <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
-                          First name is <strong>required</strong>
-                        </mat-error> -->
-                      </mat-form-field>
-                    </div>
+                  <mat-form-field appearance="outline">
+                  <input class="blotterInfo" matInput  name="lastName" [(ngModel)]="residentModel.lastName">
+                  </mat-form-field>
 
-                    <div class="col">
-                      <mat-form-field  appearance="outline" class="full-width">
-                        <input matInput placeholder="Middle name"  name="midname" [(ngModel)]="residentModel.midName">
-                        <!-- <mat-error *ngIf="addressForm.controls['midName'].hasError('required')">
-                          First name is <strong>required</strong>
-                        </mat-error> -->
-                      </mat-form-field>
-                    </div>
+                  <mat-form-field appearance="outline">
+                    <input class="blotterInfo" matInput name="age" [(ngModel)]="residentModel.age">
+                  </mat-form-field>
 
-                  </div>
-                  </div>
-                  <h1 class="poppins-bold">Other Details</h1>
-                  <div class="zontaline"></div>
-                  <div class="row">
-
-                    <div class="col">
-                      <mat-form-field class="full-width" appearance="outline">
-                        <input matInput placeholder="Age" name="age" [(ngModel)]="residentModel.age">
-                        <!-- <mat-error *ngIf="addressForm.controls['age'].hasError('required')">
-                         Age is <strong>required</strong>
-                        </mat-error> -->
-                      </mat-form-field>
-                    </div>
-
-                    <div class="col">
-                      <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Gender</mat-label>
-                        <mat-select  name="gender" [(ngModel)]="residentModel.gender">
-                          <mat-option value="male">Male</mat-option>
-                          <mat-option value="female">Female</mat-option>
-                        </mat-select>
-                        <!-- <mat-error *ngIf="addressForm.controls['gender'].hasError('required')">
-                          Gender is <strong>required</strong>
-                        </mat-error> -->
-                      </mat-form-field>
-                    </div>
-
-                    <div class="col">
-                      <mat-form-field class="full-width" appearance="outline" >
-                        <mat-label>Civil Status</mat-label>
-                        <mat-select  name="status" [(ngModel)]="residentModel.status">
-                          <mat-option value="male">Single</mat-option>
-                          <mat-option value="female">Married</mat-option>
-                          <mat-option value="female">Widowed</mat-option>
-                        </mat-select>
-                        <!-- <mat-error *ngIf="addressForm.controls['status'].hasError('required')">
-                          Civil Status name is <strong>required</strong>
-                        </mat-error> -->
-                      </mat-form-field>
-                    </div>
-
-                  </div>
-
-                <h1 class="poppins-bold">Purpose</h1>
-              <div class="zontaline"></div>
-              <div class="otherdetails">
-                <div class="row">
-                  <div class="col">
-
-                    <mat-form-field  appearance="outline" class="full-width" >
-                      <input matInput placeholder="Purpose" name="purpose" [(ngModel)]="residentModel.purpose">
-                      <!-- <mat-error *ngIf="addressForm.controls['purpose'].hasError('required')">
-                        Purpose is <strong>required</strong>
-                      </mat-error> -->
-                    </mat-form-field>
-                  </div>
-                </div>
               </div>
 
-                <mat-card-actions>
-                  <button class="btn-generate" mat-raised-button color="primary" type="submit">Generate</button>
-                </mat-card-actions>
-              </mat-card>
-            </form>
+              <mat-list role="list" class="rightside">
+
+                  <mat-list-item class="fieldNames"role="listitem">Gender</mat-list-item>
+                  <mat-list-item class="fieldNames"role="listitem">Status</mat-list-item>
+                  <mat-list-item class="fieldNames"role="listitem">Purpose</mat-list-item>
+              </mat-list>
+
+              <div class="inputs2">
+
+
+                  <mat-form-field appearance="outline">
+                  <input class="blotterInfo" matInput  name="gender" [(ngModel)]="residentModel.gender">
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                    <input class="blotterInfo" matInput  name="status" [(ngModel)]="residentModel.status">
+                    </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                  <input class="blotterInfo" matInput name="purpose" [(ngModel)]="residentModel.purpose">
+                  </mat-form-field>
+                  <mat-card-actions class="btn-generate">
+                    <button  mat-raised-button color="secondary" type="reset" >Clear</button>
+                    <button  mat-raised-button color="primary" type="submit">Generate</button>
+
+                  </mat-card-actions>
+              </div>
+             </div>
+            </mat-card>
+          </form>
+
         </mat-sidenav-container>

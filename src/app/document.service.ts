@@ -13,7 +13,10 @@ import { Record } from './record.model';
 })
 export class DocumentService {
 
-  baseUrl="http://localhost/SIA-DocumentIssuanceSystem/docissuance-api/";
+   baseUrl="http://localhost/SIA-DocumentIssuanceSystem/docissuance-api/";
+
+
+  //baseUrl="http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/";//Ayn's URL
   // convert decrypt endpoints btoa
 
   getRecords(endpoint: any, condition?: any){
@@ -21,7 +24,6 @@ export class DocumentService {
     console.log(condition);
     return this._http.post<any[]>(this.baseUrl + endpoint, btoa(JSON.stringify(condition)));
   }
-
 
   check(endpoint: any, condition?: any){
     //getRecords
@@ -73,7 +75,7 @@ export class DocumentService {
     this.brgy.next(brgy);
   }
 //pass form values to components
-  changeMessageIndigency(lastn: string,firstn: string,midn: string,age: string,gender: string,status: string, purpose:string){
+  changeMessageIndigency(lastn: string,firstn: string,midn: string,age: string,gender: string,status: string, purpose:string,brgy:string){
     this.lastName.next(lastn);
     this.firstName.next(firstn);
     this.midName.next(midn);
@@ -81,15 +83,17 @@ export class DocumentService {
     this.gender.next(gender);
     this.status.next(status);
     this.purpose.next(purpose);
+    this.brgy.next(brgy);
   }
 //pass form values to components
-  changeMessageResidency(lastn: string,firstn: string,midn: string,houseN: string,street: string, purpose:string){
+  changeMessageResidency(lastn: string,firstn: string,midn: string,houseN: string,street: string, purpose:string,brgy:string){
     this.lastName.next(lastn);
     this.firstName.next(firstn);
     this.midName.next(midn);
     this.houseNum.next(houseN);
     this.street.next(street);
     this.purpose.next(purpose);
+    this.brgy.next(brgy);
   }
 
   }
