@@ -17,7 +17,7 @@ import Swal from 'sweetalert2';
 })
 export class DocumentRecordsComponent implements OnInit{
   ELEMENT_DATA: any[] = [];
-  displayedColumns: string[] = ['id', 'lastName', 'firstName',  'middleName', 'doctype', 'houseNum', 'street', 'purpose','action'];
+  displayedColumns: string[] = ['id', 'lastName', 'firstName',  'middleName', 'doctype', 'purpose','action'];
   dataSource = new MatTableDataSource<any>(this.ELEMENT_DATA);
 
 

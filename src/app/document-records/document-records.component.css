@@ -137,12 +137,30 @@ h3 {
 hr {
   margin-left: 30px;
   margin-right: 30px;
+  margin-bottom: 50px;
 }
 
 p {
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+
+th {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #000;
+}
+
+td {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.btn-view {
+  margin-left: -65px;
+  margin-right: 10px;
 }
 
 .poppins-bold {
@@ -161,7 +179,7 @@ mat-sidenav {
   background-color: rgb(255, 255, 255);
   color: #404040;
   font-family: "Poppins", sans-serif;
-  width: 280px;
+  width: 245px;
   border-right: 0.75px solid lightgrey;
 }
 
@@ -222,7 +240,8 @@ mat-card-title {
 }
 
 .searchIcon{
-  right: 5px;
+  right: 1px;
+  bottom: 1px;
   position: absolute;
 }
 

@@ -13,7 +13,7 @@ import { Record } from './record.model';
 })
 export class DocumentService {
 
-  baseUrl="http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/";
+  baseUrl="http://localhost/SIA-DocumentIssuanceSystem/docissuance-api/";
   // convert decrypt endpoints btoa
 
   getRecords(endpoint: any, condition?: any){
