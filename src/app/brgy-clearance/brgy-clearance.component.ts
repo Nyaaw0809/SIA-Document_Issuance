@@ -55,6 +55,15 @@ export class BrgyClearanceComponent {
   });
   }
 
+  clearFields(){
+    this.residentModel.firstName = '';
+    this.residentModel.midName = '';
+    this.residentModel.lastName = '';
+    this.residentModel.purpose = '';
+    this.residentModel.houseNum = '';
+    this.residentModel.street = '';
+  }
+
   emptyRec(){
     this.docu.trans_purpose='';
     this.docu.docu_id=0;
