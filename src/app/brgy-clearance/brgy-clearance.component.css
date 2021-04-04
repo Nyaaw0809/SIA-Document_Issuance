@@ -305,8 +305,8 @@ hr {
 
 
 .fieldNames {
-  margin-bottom:37px;
-  margin-top: 18px;
+  margin-top: 3px;
+  margin-bottom: 40px;
   font-family: 'Poppins', sans-serif;
 }
 .inputs {
@@ -330,5 +330,5 @@ hr {
   border-top-width: 0;
   margin-left: 15px;
   margin-right: 5px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif
 }

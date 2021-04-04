@@ -39,14 +39,16 @@
                     <hr>
             <div class="modalFields">
               <mat-list role="list">
-                  <mat-list-item class="fieldNames"role="listitem">First Name</mat-list-item>
-                  <mat-list-item class="fieldNames"role="listitem">Middle Name</mat-list-item>
-                  <mat-list-item class="fieldNames"role="listitem">Last Name</mat-list-item>
-                  <mat-list-item class="fieldNames"role="listitem">Age</mat-list-item>
+                  <mat-list-item class="fieldNames" role="listitem">Document No.</mat-list-item>
+                  <mat-list-item class="fieldNames" role="listitem">First Name</mat-list-item>
+                  <mat-list-item class="fieldNames" role="listitem">Middle Name</mat-list-item>
+                  <mat-list-item class="fieldNames" role="listitem">Last Name</mat-list-item>
               </mat-list>
 
               <div class="inputs">
-
+                  <mat-form-field appearance="outline">
+                    <input class="blotterInfo" matInput>
+                  </mat-form-field>
                   <mat-form-field appearance="outline">
                   <input class="blotterInfo" matInput   name="firstName" [(ngModel)]="residentModel.firstName">
                   </mat-form-field>
@@ -59,22 +61,19 @@
                   <input class="blotterInfo" matInput  name="lastName" [(ngModel)]="residentModel.lastName">
                   </mat-form-field>
 
-                  <mat-form-field appearance="outline">
-                    <input class="blotterInfo" matInput name="age" [(ngModel)]="residentModel.age">
-                  </mat-form-field>
-
               </div>
 
               <mat-list role="list" class="rightside">
-
+                  <mat-list-item class="fieldNames" role="listitem">Age</mat-list-item>
                   <mat-list-item class="fieldNames"role="listitem">Gender</mat-list-item>
                   <mat-list-item class="fieldNames"role="listitem">Status</mat-list-item>
                   <mat-list-item class="fieldNames"role="listitem">Purpose</mat-list-item>
               </mat-list>
 
               <div class="inputs2">
-
-
+                  <mat-form-field appearance="outline">
+                  <input class="blotterInfo" matInput name="age" [(ngModel)]="residentModel.age">
+                  </mat-form-field>
                   <mat-form-field appearance="outline">
                   <input class="blotterInfo" matInput  name="gender" [(ngModel)]="residentModel.gender">
                   </mat-form-field>

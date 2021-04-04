@@ -42,13 +42,16 @@
               <hr>
       <div class="modalFields">
         <mat-list role="list">
-            <mat-list-item class="fieldNames"role="listitem">First Name</mat-list-item>
-            <mat-list-item class="fieldNames"role="listitem">Middle Name</mat-list-item>
-            <mat-list-item class="fieldNames"role="listitem">Last Name</mat-list-item>
+            <mat-list-item class="fieldNames" role="listitem">Document No.</mat-list-item>
+            <mat-list-item class="fieldNames" role="listitem">First Name</mat-list-item>
+            <mat-list-item class="fieldNames" role="listitem">Middle Name</mat-list-item>
+            <mat-list-item class="fieldNames" role="listitem">Last Name</mat-list-item>
         </mat-list>
 
         <div class="inputs">
-
+            <mat-form-field appearance="outline">
+              <input class="blotterInfo" matInput>
+            </mat-form-field>
             <mat-form-field appearance="outline">
             <input class="blotterInfo" matInput   name="firstName" [(ngModel)]="residentModel.firstName">
             </mat-form-field>

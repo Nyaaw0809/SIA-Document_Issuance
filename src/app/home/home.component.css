@@ -291,15 +291,20 @@ mat-icon {
   align-items: center;
 }
 .bgrCard {
-  margin-left: 3px;
-  margin-right: 3px;
+  margin-right: 10px;
   width: 50%;
-  height: 350px;
+  height: 360px;
+}
+
+.bgrCard1 {
+  margin-left: 10px;
+  width: 50%;
+  height: 360px;
 }
 
 .docu-card {
   width: 255px;
-  height: 100px;
+  height: 105px;
   margin-top: 10px;
   margin-right: 20px;
   overflow: hidden;
