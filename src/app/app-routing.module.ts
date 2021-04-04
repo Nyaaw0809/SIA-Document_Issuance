@@ -9,6 +9,7 @@ import { BarangayClearancePdfComponent } from './barangay-clearance-pdf/barangay
 import { IndigencyPdfComponent } from './indigency-pdf/indigency-pdf.component';
 import { ResidencyPdfComponent } from './residency-pdf/residency-pdf.component';
 import { DocumentRecordsComponent } from './document-records/document-records.component';
+import {DocumentRecordViewComponent} from './document-record-view/document-record-view.component';
 const routes: Routes = [
   {
     path: '',
@@ -54,6 +55,10 @@ const routes: Routes = [
   {
     path: 'documentRecords',
     component: DocumentRecordsComponent
+  },
+  {
+    path: 'documentRecordView',
+    component: DocumentRecordViewComponent
   }
 
 ];

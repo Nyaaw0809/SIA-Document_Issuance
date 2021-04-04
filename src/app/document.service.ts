@@ -13,10 +13,10 @@ import { Record } from './record.model';
 })
 export class DocumentService {
 
-   baseUrl="http://localhost/SIA-DocumentIssuanceSystem/docissuance-api/";
+  //  baseUrl="http://localhost/SIA-DocumentIssuanceSystem/docissuance-api/";
 
 
-  //baseUrl="http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/";//Ayn's URL
+  baseUrl="http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/";//Ayn's URL
   // convert decrypt endpoints btoa
 
   getRecords(endpoint: any, condition?: any){
@@ -40,7 +40,7 @@ export class DocumentService {
   }
 
 
-
+  private trans_id = new BehaviorSubject<string>("");
   private lastName = new BehaviorSubject<string>("");
   private firstName = new BehaviorSubject<string>("");
   private midName = new BehaviorSubject<string>("");
@@ -51,6 +51,7 @@ export class DocumentService {
   private age = new BehaviorSubject<string>("");
   private gender = new BehaviorSubject<string>("");
   private status = new BehaviorSubject<string>("");
+  currentTransId = this.trans_id.asObservable();
   currentLast = this.lastName.asObservable();
   currentFirst = this.firstName.asObservable();
   currentMid = this.midName.asObservable();
@@ -63,6 +64,12 @@ export class DocumentService {
   currentStatus = this.status.asObservable();
 
   constructor(private _http: HttpClient) { }
+
+
+  //pass form values to components
+  passRecordView(trans_id: string){
+    this.trans_id.next(trans_id);
+  }
 
   //pass form values to components
   changeMessage(lastn: string,firstn: string,midn: string,houseN: string,street: string,purpose: string,brgy: string){

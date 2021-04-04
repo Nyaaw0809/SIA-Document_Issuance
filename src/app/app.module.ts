@@ -32,6 +32,7 @@ import { DocumentRecordsComponent } from './document-records/document-records.co
 import { ChartsModule } from 'ng2-charts';
 import {HttpClientModule} from '@angular/common/http'
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { DocumentRecordViewComponent } from './document-record-view/document-record-view.component';
 
 
 
@@ -46,7 +47,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     BarangayClearancePdfComponent,
     IndigencyPdfComponent,
     ResidencyPdfComponent,
-    DocumentRecordsComponent
+    DocumentRecordsComponent,
+    DocumentRecordViewComponent
   ],
   imports: [
     BrowserModule,

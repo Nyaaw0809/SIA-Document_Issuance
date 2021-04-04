@@ -1,0 +1,58 @@
+
+<h2 mat-dialog-title>
+  <mat-icon class="modalIcons">person</mat-icon>Resident Record
+</h2>
+<mat-divider [vertical]="false"></mat-divider>
+<br>
+<mat-dialog-content class="mat-typography">
+
+  <div class="modalFields">
+    <!-- PATIENT PHOTO -->
+    <div class="patient-profile">
+      <img src="/assets/avatar1.png">
+    </div>
+    <mat-list role="list">
+      <mat-list-item class="fieldNamesno" role="listitem">ID</mat-list-item>
+      <mat-list-item class="fieldNames" role="listitem">Name</mat-list-item>
+      <mat-list-item class="fieldNames" role="listitem">Gender</mat-list-item>
+      <mat-list-item class="fieldNames" role="listitem">Address</mat-list-item>
+    </mat-list>
+
+    <div class="inputs" >
+      <mat-list role="list">
+        <mat-list-item class="fieldNamesno1" role="listitem">12</mat-list-item>
+        <mat-list-item class="fieldNames1" role="listitem">Uson, Ayn Gandhi V.</mat-list-item>
+        <mat-list-item class="fieldNames1" role="listitem">Female</mat-list-item>
+        <mat-list-item class="fieldNamesAdd" role="listitem">San Nicolas</mat-list-item>
+      </mat-list>
+    </div>
+
+    <mat-list role="list">
+      <mat-list-item class="fieldNamesno" role="listitem">Age</mat-list-item>
+      <mat-list-item class="fieldNames" role="listitem">Contact Number</mat-list-item>
+      <mat-list-item class="fieldNames" role="listitem">Date of Birth</mat-list-item>
+    </mat-list>
+
+    <div class="inputs" >
+      <mat-list role="list">
+        <mat-list-item class="fieldNamesno1" role="listitem">20</mat-list-item>
+        <mat-list-item class="fieldNames1" role="listitem">09085526207</mat-list-item>
+        <mat-list-item class="fieldNames1" role="listitem">Feb 8 2000</mat-list-item>
+      </mat-list>
+    </div>
+
+  </div>
+
+
+  <br><br>
+  <h2 mat-dialog-title> Requested Document Records</h2>
+  <mat-divider [vertical]="false"></mat-divider>
+  <br>
+
+  <br>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button class="modalBtn2" mat-raised-button mat-dialog-close>Back</button>
+  <button class="modalBtn3" mat-raised-button [mat-dialog-close]="true">New Document</button>
+</mat-dialog-actions>

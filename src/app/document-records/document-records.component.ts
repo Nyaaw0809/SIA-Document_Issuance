@@ -9,6 +9,9 @@ import { Record } from '../record.model';
 import {MatPaginator} from '@angular/material/paginator';
 import Swal from 'sweetalert2';
 
+import {MatDialog} from '@angular/material/dialog';
+import { DocumentRecordViewComponent } from '../document-record-view/document-record-view.component';
+
 
 @Component({
   selector: 'app-document-records',
@@ -23,11 +26,20 @@ export class DocumentRecordsComponent implements OnInit{
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   records: any;
-
+  trans_rec: any[];
+  trans_id:any;
   ngOnInit() {
     this.getRecords();
-
   }
+  openRecordView(id) {
+    this.document.passRecordView(id);
+    const dialogRef = this.dialog.open(DocumentRecordViewComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
   public getRecords(){
     this.document.getRecords(btoa("getrecords"))
     .subscribe(result=>{
@@ -39,7 +51,7 @@ export class DocumentRecordsComponent implements OnInit{
   }
 
 
-  constructor(private breakpointObserver: BreakpointObserver, public router : Router, private document : DocumentService) { }
+  constructor(private breakpointObserver: BreakpointObserver, public router : Router, private document : DocumentService,public dialog: MatDialog) { }
 
   sidenav: MatSidenav;
   isExpanded = true;
