@@ -27,7 +27,6 @@ export class BrgyClearanceComponent {
   condition: string;
   ngOnInit() {
 
-
   }
 
 
@@ -35,15 +34,12 @@ export class BrgyClearanceComponent {
     this.document.getRecords(btoa("checkres"))
           .subscribe((result:any[])=>{
               this.valToCheck = result;
-              console.log(this.valToCheck);
         });
 
   }
   public addRecords(){
     this.document.newRecord(btoa("newrecord"), this.docu)
           .subscribe((result:any[])=>{
-              this.valToCheck = result;
-              console.log(this.valToCheck);
         });
 
   }
@@ -79,7 +75,7 @@ export class BrgyClearanceComponent {
       // this.document.newRecord(btoa("newrecord"),data).subscribe((data: any) =>{console.log(data);});
       this.residentModel.brgy="Barangay Cabalan";
       //pass input value to service to another component
-
+      console.log(this.valToCheck);
       for (let res of this.valToCheck){
         if( this.residentModel.firstName == res.res_fname
           &&  this.residentModel.lastName == res.res_lname

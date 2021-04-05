@@ -31,12 +31,12 @@ export class DocumentRecordsComponent implements OnInit{
   ngOnInit() {
     this.getRecords();
   }
-  openRecordView(id) {
-    this.document.passRecordView(id);
+  openRecordView(lname:string, fname:string, mname:string,houseN: string,street: string,brgy: string,city: string,province: string,purpose: string,bday:string) {
+    this.document.passRecordView(lname,fname,mname,houseN,street,brgy,city,province,purpose,bday);
     const dialogRef = this.dialog.open(DocumentRecordViewComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      console.log(`Lastname: ${lname }`);
     });
   }
 

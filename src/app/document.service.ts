@@ -13,15 +13,14 @@ import { Record } from './record.model';
 })
 export class DocumentService {
 
-  //  baseUrl="http://localhost/SIA-DocumentIssuanceSystem/docissuance-api/";
+   baseUrl="http://localhost/SIA-DocumentIssuanceSystem/docissuance-api/";
 
 
-  baseUrl="http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/";//Ayn's URL
+  // baseUrl="http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/";//Ayn's URL
   // convert decrypt endpoints btoa
 
   getRecords(endpoint: any, condition?: any){
     //getRecords
-    console.log(condition);
     return this._http.post<any[]>(this.baseUrl + endpoint, btoa(JSON.stringify(condition)));
   }
 
@@ -40,12 +39,15 @@ export class DocumentService {
   }
 
 
-  private trans_id = new BehaviorSubject<string>("");
+  private trans_id = new BehaviorSubject<number>(0);
   private lastName = new BehaviorSubject<string>("");
   private firstName = new BehaviorSubject<string>("");
   private midName = new BehaviorSubject<string>("");
   private houseNum = new BehaviorSubject<string>("");
   private street = new BehaviorSubject<string>("");
+  private city = new BehaviorSubject<string>("");
+  private province = new BehaviorSubject<string>("");
+  private bday = new BehaviorSubject<string>("");
   private purpose = new BehaviorSubject<string>("");
   private brgy = new BehaviorSubject<string>("");
   private age = new BehaviorSubject<string>("");
@@ -57,6 +59,9 @@ export class DocumentService {
   currentMid = this.midName.asObservable();
   currentHouseN = this.houseNum.asObservable();
   currentStreet = this.street.asObservable();
+  currentCity = this.city.asObservable();
+  currentProvince = this.province.asObservable();
+  currentBday = this.bday.asObservable();
   currentPurpose = this.purpose.asObservable();
   currentBrgy = this.brgy.asObservable();
   currentAge = this.age.asObservable();
@@ -67,8 +72,18 @@ export class DocumentService {
 
 
   //pass form values to components
-  passRecordView(trans_id: string){
-    this.trans_id.next(trans_id);
+  passRecordView(lastn: string,firstn: string,midn: string,houseN: string,street: string,brgy: string,city: string,province: string,purpose: string,bday:string){
+    this.lastName.next(lastn);
+    this.firstName.next(firstn);
+    this.midName.next(midn);
+    this.houseNum.next(houseN);
+    this.street.next(street);
+    this.brgy.next(brgy);
+    this.city.next(city);
+    this.purpose.next(purpose);
+    this.province.next(province);
+    
+    this.bday.next(bday);
   }
 
   //pass form values to components

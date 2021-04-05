@@ -5,7 +5,6 @@
 <mat-divider [vertical]="false"></mat-divider>
 <br>
 <mat-dialog-content class="mat-typography">
-
   <div class="modalFields">
     <!-- PATIENT PHOTO -->
     <div class="patient-profile">
@@ -20,36 +19,36 @@
 
     <div class="inputs" >
       <mat-list role="list">
-        <mat-list-item class="fieldNamesno1" role="listitem">12</mat-list-item>
-        <mat-list-item class="fieldNames1" role="listitem">Uson, Ayn Gandhi V.</mat-list-item>
-        <mat-list-item class="fieldNames1" role="listitem">Female</mat-list-item>
-        <mat-list-item class="fieldNamesAdd" role="listitem">San Nicolas</mat-list-item>
+        <mat-list-item class="fieldNamesno1" role="listitem"></mat-list-item>
+        <mat-list-item class="fieldNames1" role="listitem">  {{name}} </mat-list-item>
+        <mat-list-item class="fieldNames1" role="listitem"></mat-list-item>
+        <mat-list-item class="fieldNamesAdd" role="listitem">{{address}}</mat-list-item>
       </mat-list>
     </div>
 
     <mat-list role="list">
       <mat-list-item class="fieldNamesno" role="listitem">Age</mat-list-item>
-      <mat-list-item class="fieldNames" role="listitem">Contact Number</mat-list-item>
+      <mat-list-item class="fieldNames" role="listitem">Purpose</mat-list-item>
       <mat-list-item class="fieldNames" role="listitem">Date of Birth</mat-list-item>
     </mat-list>
 
     <div class="inputs" >
       <mat-list role="list">
-        <mat-list-item class="fieldNamesno1" role="listitem">20</mat-list-item>
-        <mat-list-item class="fieldNames1" role="listitem">09085526207</mat-list-item>
-        <mat-list-item class="fieldNames1" role="listitem">Feb 8 2000</mat-list-item>
+        <mat-list-item class="fieldNamesno1" role="listitem"></mat-list-item>
+        <mat-list-item class="fieldNames1" role="listitem">{{purpose}}</mat-list-item>
+        <mat-list-item class="fieldNames1" role="listitem">{{bday}}</mat-list-item>
       </mat-list>
     </div>
 
   </div>
 
-
+<!--
   <br><br>
   <h2 mat-dialog-title> Requested Document Records</h2>
   <mat-divider [vertical]="false"></mat-divider>
   <br>
 
-  <br>
+  <br> -->
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
