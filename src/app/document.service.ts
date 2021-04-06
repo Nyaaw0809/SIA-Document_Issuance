@@ -13,10 +13,10 @@ import { Record } from './record.model';
 })
 export class DocumentService {
 
-   baseUrl="http://localhost/SIA-DocumentIssuanceSystem/docissuance-api/";
+  //  baseUrl="http://localhost/SIA-DocumentIssuanceSystem/docissuance-api/";
 
 
-  // baseUrl="http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/";//Ayn's URL
+  baseUrl="http://localhost/sia-documentissuance/SIA-DocumentIssuance/docissuance-api/";//Ayn's URL
   // convert decrypt endpoints btoa
 
   getRecords(endpoint: any, condition?: any){
@@ -27,7 +27,7 @@ export class DocumentService {
   check(endpoint: any, condition?: any){
     //getRecords
     condition = btoa(condition)
-    return this._http.post<any[]>(this.baseUrl + endpoint,btoa(condition));
+    return this._http.post<any[]>(this.baseUrl + endpoint,btoa(JSON.stringify(condition)));
   }
 
   newrecord: any={};
@@ -39,7 +39,7 @@ export class DocumentService {
   }
 
 
-  private trans_id = new BehaviorSubject<number>(0);
+  private res_id = new BehaviorSubject<string>("");
   private lastName = new BehaviorSubject<string>("");
   private firstName = new BehaviorSubject<string>("");
   private midName = new BehaviorSubject<string>("");
@@ -53,7 +53,7 @@ export class DocumentService {
   private age = new BehaviorSubject<string>("");
   private gender = new BehaviorSubject<string>("");
   private status = new BehaviorSubject<string>("");
-  currentTransId = this.trans_id.asObservable();
+  currentResId = this.res_id.asObservable();
   currentLast = this.lastName.asObservable();
   currentFirst = this.firstName.asObservable();
   currentMid = this.midName.asObservable();
@@ -72,7 +72,8 @@ export class DocumentService {
 
 
   //pass form values to components
-  passRecordView(lastn: string,firstn: string,midn: string,houseN: string,street: string,brgy: string,city: string,province: string,purpose: string,bday:string){
+  passRecordView(res_id:string,lastn: string,firstn: string,midn: string,houseN: string,street: string,brgy: string,city: string,province: string,purpose: string,bday:string,gender:string){
+    this.res_id.next(res_id);
     this.lastName.next(lastn);
     this.firstName.next(firstn);
     this.midName.next(midn);
@@ -82,7 +83,7 @@ export class DocumentService {
     this.city.next(city);
     this.purpose.next(purpose);
     this.province.next(province);
-    
+    this.gender.next(gender);
     this.bday.next(bday);
   }
 

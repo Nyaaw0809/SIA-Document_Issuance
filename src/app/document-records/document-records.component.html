@@ -82,15 +82,6 @@
           <td mat-cell *matCellDef="let element"> {{element.docu_type}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="houseNum">
-          <th mat-header-cell *matHeaderCellDef> House num </th>
-          <td mat-cell *matCellDef="let element"> {{element.res_housenum}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="street">
-          <th mat-header-cell *matHeaderCellDef> Street </th>
-          <td mat-cell *matCellDef="let element"> {{element.res_street}} </td>
-        </ng-container>
 
         <ng-container matColumnDef="purpose">
           <th mat-header-cell *matHeaderCellDef> Purpose </th>
@@ -104,8 +95,8 @@
                         justify-content: center;
                         align-items: center;
           ">
-              <button class="btn-view" mat-flat-button color="primary"  (click)="openRecordView(row.res_lname,row.res_fname,row.res_mname,row.res_housenum,row.res_street,row.res_brgy,row.res_city,row.res_province,row.res_trans_purpose,row.res_bday)">View</button>
-              <button mat-stroked-button color="secondary">Archive</button>
+              <button class="btn-view" mat-flat-button color="primary"  (click)="openRecordView(row.res_id,row.res_lname,row.res_fname,row.res_mname,row.res_housenum,row.res_street,row.res_brgy,row.res_city,row.res_province,row.trans_purpose,row.res_bday,row.res_sex)">View</button>
+              <button mat-stroked-button color="secondary" >Archive</button>
             </div>
 
           </td>

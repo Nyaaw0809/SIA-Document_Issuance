@@ -98,7 +98,7 @@ export class BrgyClearanceComponent {
 
               this.document.changeMessage(this.residentModel.lastName,this.residentModel.firstName,this.residentModel.midName,this.residentModel.houseNum,this.residentModel.street,this.residentModel.purpose,this.residentModel.brgy);
 
-            //  this.router.navigate(["/brgyclearanceView"]);
+            this.router.navigate(["/brgyclearanceView"]);
             this.emptyRec();
             }
           })

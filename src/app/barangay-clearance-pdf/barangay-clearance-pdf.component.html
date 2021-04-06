@@ -1,14 +1,14 @@
 
   <div id="content">
   </div>
-  <div class="container">
+  
 
   <div class="butCon">
     <button mat-stroked-button color="primary" type="button" routerLink="/brgy-clearance" >Back</button>
 
     <button mat-raised-button color="primary" type="button"  value="Convert" (click)="convetToPDF()" >Download</button>
     </div>
-
+  <div class="container">
     <mat-card id="contentToConvert">
     <img class="seal" src="/assets/gaposeal.png" alt="seal">
     <img class="seal2" src="/assets/republic.png" alt="seal2">
@@ -30,7 +30,7 @@
 
 
             <h1>BARANGAY CLEARANCE</h1>
-            <p><b>THIS IS TO CERTIFY</b> that <b>{{firstn}} {{midn}} {{lastn}}</b> is a bonafide resident of <b>{{street}}, {{brgy}}</b> have never been 
+            <p><b>THIS IS TO CERTIFY</b> that <b>{{firstn}} {{midn}} {{lastn}}</b> is a bonafide resident of <b>#{{houseN}} {{street}} street, {{brgy}}</b> have never been 
               convicted of any crime nor violated any Barangay neither a member, of any subversive organization as far as the 
               record of this office is concerned  to this date.<br><br>
               This clearance is being issued upon the request of the above named person for <b>{{purpose}}</b> purposes.<br><br>

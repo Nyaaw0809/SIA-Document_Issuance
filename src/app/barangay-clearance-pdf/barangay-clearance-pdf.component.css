@@ -59,6 +59,10 @@ p {
 }
 
 .butCon {
-  position: absolute;
-  right: 0;
+  float:right;
+  margin: 10px;
+}
+
+button{
+  margin: 10px;
 }

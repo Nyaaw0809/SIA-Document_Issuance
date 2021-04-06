@@ -31,12 +31,12 @@ export class DocumentRecordsComponent implements OnInit{
   ngOnInit() {
     this.getRecords();
   }
-  openRecordView(lname:string, fname:string, mname:string,houseN: string,street: string,brgy: string,city: string,province: string,purpose: string,bday:string) {
-    this.document.passRecordView(lname,fname,mname,houseN,street,brgy,city,province,purpose,bday);
+  openRecordView(res_id:string,lname:string, fname:string, mname:string,houseN: string,street: string,brgy: string,city: string,province: string,purpose: string,bday:string,gender:string) {
+    this.document.passRecordView(res_id,lname,fname,mname,houseN,street,brgy,city,province,purpose,bday,gender);
     const dialogRef = this.dialog.open(DocumentRecordViewComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Lastname: ${lname }`);
+      console.log(`Lastname: ${lname }`,`Purpose: ${purpose }`);
     });
   }
 

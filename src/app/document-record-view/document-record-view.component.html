@@ -19,36 +19,84 @@
 
     <div class="inputs" >
       <mat-list role="list">
-        <mat-list-item class="fieldNamesno1" role="listitem"></mat-list-item>
+        <mat-list-item class="fieldNamesno1" role="listitem">{{res_id}}</mat-list-item>
         <mat-list-item class="fieldNames1" role="listitem">  {{name}} </mat-list-item>
-        <mat-list-item class="fieldNames1" role="listitem"></mat-list-item>
+        <mat-list-item class="fieldNames1" role="listitem">{{genderString}}</mat-list-item>
         <mat-list-item class="fieldNamesAdd" role="listitem">{{address}}</mat-list-item>
       </mat-list>
     </div>
 
     <mat-list role="list">
       <mat-list-item class="fieldNamesno" role="listitem">Age</mat-list-item>
-      <mat-list-item class="fieldNames" role="listitem">Purpose</mat-list-item>
       <mat-list-item class="fieldNames" role="listitem">Date of Birth</mat-list-item>
     </mat-list>
 
     <div class="inputs" >
       <mat-list role="list">
-        <mat-list-item class="fieldNamesno1" role="listitem"></mat-list-item>
-        <mat-list-item class="fieldNames1" role="listitem">{{purpose}}</mat-list-item>
+        <mat-list-item class="fieldNamesno1" role="listitem">{{age}}</mat-list-item>
         <mat-list-item class="fieldNames1" role="listitem">{{bday}}</mat-list-item>
       </mat-list>
     </div>
 
   </div>
 
-<!--
+
   <br><br>
   <h2 mat-dialog-title> Requested Document Records</h2>
   <mat-divider [vertical]="false"></mat-divider>
   <br>
+  <mat-grid-list cols="2" rowHeight="100px">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-  <br> -->
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Document ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.trans_id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Last name </th>
+      <td mat-cell *matCellDef="let element"> {{element.res_lname}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> First name </th>
+      <td mat-cell *matCellDef="let element"> {{element.res_fname}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="middleName">
+      <th mat-header-cell *matHeaderCellDef> Middle name </th>
+      <td mat-cell *matCellDef="let element"> {{element.res_mname}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="doctype">
+      <th mat-header-cell *matHeaderCellDef> Document Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.docu_type}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="purpose">
+      <th mat-header-cell *matHeaderCellDef> Purpose </th>
+      <td mat-cell *matCellDef="let element"> {{element.trans_purpose}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="trans_date">
+      <th mat-header-cell *matHeaderCellDef> Date Issued </th>
+      <td mat-cell *matCellDef="let element"> {{element.trans_date}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+
+  </table>
+  <mat-paginator [pageSize]="8" showFirstLastButton></mat-paginator>
+</mat-grid-list>
+  <br>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
